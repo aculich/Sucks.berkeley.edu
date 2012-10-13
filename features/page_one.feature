@@ -7,7 +7,7 @@ Feature: Auto-fill issues
 Background: issues have been added to database
 
   Given the following issues exist:
-  | issue_na                | claimed | date_entered |
+  | issue_name              | claimed | date_entered |
   | Airbears                | Y       | 25-Nov-1992  |
   | Perimeter Buses         | Y       | 26-Oct-1984  |
   | CS169                   | N       | 21-Jul-1989  |
