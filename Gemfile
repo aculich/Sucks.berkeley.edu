@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'cucumber-rails'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
