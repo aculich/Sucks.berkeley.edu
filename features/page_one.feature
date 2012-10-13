@@ -23,11 +23,11 @@ Scenario: see the correct information displayed on the front page
 
 Scenario: enter a new issue
   Given I am on the Sucks.Berkeley.edu home page
-  And I type "Telebears"
+  And I type "Telebears" into the text box
   Then I should see “Telebears sucks!” at the top of the page
   And I should see a second text box with the question “what were you doing doing when the problem occurred?”
 
 Scenario: enmter an existing issue
   Given I am on the Sucks.Berkeley.edu home page
-  And I type "Air"
-  Then I should a drop-down menu with the entries "Airbears", "Air Bud", and "Airplatypuses"
+  And I type "Air" into the text box
+  Then I should a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
