@@ -7,52 +7,27 @@ Feature: Auto-fill issues
 Background: issues have been added to database
 
   Given the following issues exist:
-  | title                   | rating | release_date |
-  | Aladdin                 | G      | 25-Nov-1992  |
-  | The Terminator          | R      | 26-Oct-1984  |
-  | When Harry Met Sally    | R      | 21-Jul-1989  |
-  | The Help                | PG-13  | 10-Aug-2011  |
-  | Chocolat                | PG-13  | 5-Jan-2001   |
-  | Amelie                  | R      | 25-Apr-2001  |
-  | 2001: A Space Odyssey   | G      | 6-Apr-1968   |
-  | The Incredibles         | PG     | 5-Nov-2004   |
-  | Raiders of the Lost Ark | PG     | 12-Jun-1981  |
-  | Chicken Run             | G      | 21-Jun-2000  |
+  | issue_na                | claimed | date_entered |
+  | Airbears                | Y       | 25-Nov-1992  |
+  | Perimeter Buses         | Y       | 26-Oct-1984  |
+  | CS169                   | N       | 21-Jul-1989  |
+  | BSpace                  | N       | 10-Aug-2011  |
+  | Airbruins               | N       | 13-Oct-2012  |
+  | Airplatypuses           | N       | 01-May-2004  |
 
   And  I am on the Sucks.Berkeley.edu home page
   
-Scenario: restrict to movies with 'PG' or 'R' ratings
-  Given I am on the RottenPotatoes home page
-  
-  # enter step(s) to check the 'PG' and 'R' checkboxes
-  When I check "ratings_PG"
-  When I uncheck "ratings_R"
-  When I check the following ratings: PG, R
-  
-  # enter step(s) to uncheck all other checkboxes
-  And I uncheck the following ratings: NC-17, G, PG-13
+Scenario: see the correct information displayed on the front page
+  Given I am on the Sucks.Berkeley.edu home page
+  Then I should see only a text box followed by the word "sucks!"
 
-  # enter step to "submit" the search form on the homepage
-  And I press "Refresh"
-  
-  # enter step(s) to ensure that PG and R movies are visible
-  Then I should see "The Incredibles"
-  And I should see "Raiders of the Lost Ark"
-  And I should see "The Terminator"
-  And I should see "When Harry Met Sally"
-  And I should see "Amelie"
-  
-  # enter step(s) to ensure that other movies are not visible
-  And I should not see "Aladdin"
-  And I should not see "The Help"
-  And I should not see "Chocolat"
-  And I should not see "2001: A Space Odyssey"
-  And I should not see "Chicken Run"
+Scenario: enter a new issue
+  Given I am on the Sucks.Berkeley.edu home page
+  And I type "Telebears"
+  Then I should see “Telebears sucks!” at the top of the page
+  And I should see a second text box with the question “what were you doing doing when the problem occurred?”
 
-Scenario: no ratings selected
-  # see assignment
-
-Scenario: all ratings selected
-  When I check the following ratings: PG, R, NC-17, G, PG-13
-  When I press "Refresh"
-  Then I should see all of the movies
+Scenario: enmter an existing issue
+  Given I am on the Sucks.Berkeley.edu home page
+  And I type "Air"
+  Then I should a drop-down menu with the entries "Airbears", "Air Bud", and "Airplatypuses"
