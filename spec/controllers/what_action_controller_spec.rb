@@ -1,4 +1,4 @@
-require "spec-helper"
+require "spec_helper"
 
 describe WhatActionController do
   describe "Typing in the textbox" do
