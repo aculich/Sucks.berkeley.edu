@@ -4,10 +4,12 @@
     %title= "sucks.Berkeley"
     %meta{ :content => "", :name => "description" }
     %meta{ :content => "", :name => "author" }
-    %link{ :href => "/css/screen.css", :media => "screen", :rel => "stylesheet" }
   %body
     %header
-      %h1= "sucks.Berkeley"
-
+      sucks.Berkeley
     %section
-      Luke Sucks
+      %div{ :id => "mainbox" }
+        = form_tag do
+          = text_field :issue, ''
+          = label :issue, :sucks!, ''
+          = submit_tag ''
