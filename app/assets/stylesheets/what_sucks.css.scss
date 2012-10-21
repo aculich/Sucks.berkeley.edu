@@ -1,27 +1,37 @@
 body {
-	margin: 0;
-	background-color: #266189;
-	color: #333;
+  margin: 0;
+  background-color: #266189;
+  color: #333;
+  height: 100%
 }
 
 header {
-	background-color: #FFF;
-	padding: .3125em .625em;
+  background-color: #FFF;
+  padding: .3125em .625em;
+}
+
+#center-container {
+  position: absolute; 
+  top: 35%;
+  left: 0;
+  width: 100%;
 }
 
 #main-box {
-	background-color: #FFF;
+  background-color: #FFF;
   -webkit-box-shadow: 0em 0em .625em .125em #333;
-	box-shadow: 0em 0em .625em .125em #333;
-	margin: 20% auto;
+  -moz-box-shadow: 0em 0em .625em .125em #333; 
+  box-shadow: 0em 0em .625em .125em #333;
+  margin: -.5em auto;
   width: 18em;
   padding: 1.875em 1em;
   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px; 
 }
 
 #main-box form {
-	margin: 0 auto;
+  margin: 0 auto;
   width: 14em;
   height: 1.3em;
   font-size: 1.3em;
@@ -49,4 +59,18 @@ header {
 #main-box input[type='submit']:hover{
   cursor: pointer;
   background-position: left;
+}
+
+#tracking-box {
+  background-color: #324f63;
+  margin: auto;
+  margin: 0 auto;
+  width: 18em;
+  padding: 1.875em 1em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px #333; 
+  -moz-box-shadow: inset 0 0 5px #333; 
+  -webkit-box-shadow: inset 0 0 5px #333; 
 }
