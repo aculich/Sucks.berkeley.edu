@@ -9,8 +9,7 @@ Given /the following issues exist/ do |issues_table|
 end
 
 Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
-  debugger
-  x = 0
+  assert(find(:css,"#main-box>form>label").text == arg1)
 end
 
 # Make sure that one string (regexp) occurs before or after another one
