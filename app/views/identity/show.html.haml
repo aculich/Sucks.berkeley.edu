@@ -1,0 +1,22 @@
+%header sucks.Berkeley
+%section
+  %div{ :id => "center-container" }
+    %div{ :id => "tracking-box" }
+      = @issue_name
+      %br
+      %br
+      Action: blah blah blah
+      %br
+      %br
+      Goal: blah blah blah
+    %div{ :id => "main-box" }
+      %p I am a
+      = link_to '/', "Student"
+      = link_to '/', "Professor"
+      = link_to '/', "Staff" 
+      = form_tag do
+        = label :identity, "(Doesn't describe you? Type something else)", ''
+        %br
+        %br
+        = text_field :put, :identity       
+        = submit_tag '', :id => 'identity_submit'
