@@ -54,7 +54,9 @@ Sucks::Application.routes.draw do
   root :to => 'what_sucks#index'
 
   match '/what_sucks/index' => 'what_sucks#create', :method => 'put'
-  match '/action/:issue_id' => 'what_action#show'
+  match '/action/:issue_id?issue_action=:issue_action' => 'what_action#edit', :method => 'put'
+  match '/goal/:issue_id?issue_goal=:issue_goal' => 'what_goal#edit', :method => 'put'
+  match '/action/:issue_id' => 'what_action#show', :method => 'get'
   match '/goal/:issue_id', :to => 'what_goal#show'
   match '/identification/:issue_id', :to => 'identity#show'
   
