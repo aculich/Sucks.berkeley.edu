@@ -1,16 +1,8 @@
-!!! 5
-%html
-  %head
-    %title= "sucks.Berkeley"
-    %meta{ :content => "", :name => "description" }
-    %meta{ :content => "", :name => "author" }
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1" }
-  %body
-    %header
-      sucks.Berkeley
-    %section
-      %div{ :id => "mainbox" }
-        = form_tag do
-          = text_field :issue, ''
-          = label :issue, :sucks!, ''
-          = submit_tag ''
+%header sucks.Berkeley
+%section
+  %div{ :id => "center-container" }
+    %div{ :id => "main-box" }
+      = form_tag do
+        = text_field :put, :issue
+        = label :issue, :sucks!, ''
+        = submit_tag '', :id => 'what_sucks_submit'
