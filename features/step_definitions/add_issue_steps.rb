@@ -4,9 +4,12 @@ Given /the following issues exist/ do |issues_table|
   issues_table.hashes.each do |issue|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-	Issue.new(issue)
-	Issue.save!
+	Issue.create!(issue)
   end
+end
+
+Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
+  assert(find(:css,"#main-box>form>label").text == arg1)
 end
 
 # Make sure that one string (regexp) occurs before or after another one
