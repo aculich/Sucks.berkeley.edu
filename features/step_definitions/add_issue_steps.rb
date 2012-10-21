@@ -1,10 +1,11 @@
 # Add a declarative step here for populating the DB with movies.
 
-Given /the following movies exist/ do |movies_table|
-  movies_table.hashes.each do |movie|
+Given /the following issues exist/ do |issues_table|
+  issues_table.hashes.each do |issue|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-	Movie.create!(movie)
+	Issue.new(issue)
+	Issue.save!
   end
 end
 
