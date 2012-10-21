@@ -9,7 +9,7 @@ header {
 	padding: .3125em .625em;
 }
 
-#mainbox {
+#main-box {
 	background-color: #FFF;
   -webkit-box-shadow: 0em 0em .625em .125em #333;
 	box-shadow: 0em 0em .625em .125em #333;
@@ -20,14 +20,14 @@ header {
   border-radius: 5px; 
 }
 
-#mainbox form {
+#main-box form {
 	margin: 0 auto;
   width: 14em;
   height: 1.3em;
   font-size: 1.3em;
 }
 
-#mainbox input {
+#main-box input {
   width: 50%;
   height: 1.5em;
   -webkit-border-radius: 4px;
@@ -36,7 +36,7 @@ header {
   margin: 0;
 }
 
-#mainbox input[type='submit']{
+#main-box input[type='submit']{
   width: 25px;
   height: 25px;
   background: url("rightarrow.png");
@@ -46,7 +46,7 @@ header {
   float: right;
 }
 
-#mainbox input[type='submit']:hover{
+#main-box input[type='submit']:hover{
   cursor: pointer;
   background-position: left;
 }
