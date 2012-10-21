@@ -52,9 +52,9 @@ Sucks::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   root :to => 'what_sucks#index'
-  
-  match '/what/:issue_id', :to => 'what_sucks#show'
-  match '/action/:issue_id', :to => 'what_action#show'
+
+  match '/what_sucks/index' => 'what_sucks#create', :method => 'put'
+  match '/action/:issue_id' => 'what_action#show'
   match '/goal/:issue_id', :to => 'what_goal#show'
   match '/identification/:issue_id', :to => 'identity#show'
   
