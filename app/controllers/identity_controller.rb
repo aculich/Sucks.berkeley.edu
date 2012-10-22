@@ -7,15 +7,15 @@ class IdentityController < ApplicationController
     @issue_name = issue.name
     @issue_action = issue.action
     @issue_goal = issue.goal
-    if params[:put]
+    if request.post?
       issue_id = params[:issue_id]
-      identity = params[:put][:identity]
+      identity = params["what-text"]
       if identity == "" or identity == nil
         flash[:notice] = "Please choose an identity!"
         redirect_to "/identity/#{issue_id}" and return
       else
         issue = Issue.find_by_id(params[:issue_id])
-        identity = params[:put][:identity]
+        identity = params["what-text"]
         issue.identity_tags = identity
         issue.save
         redirect_to "/summary/#{issue_id}"
