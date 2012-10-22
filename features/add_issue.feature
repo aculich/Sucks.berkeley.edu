@@ -36,8 +36,8 @@ Scenario: enter a new issue
 #  Then I should see a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
 #  And I choose "Airbears"
 #  Then I should be on Page 2
-#  And I should see “Airbears sucks!” at the top of the page
-#  And I should see a text box underneath that asks "What were you doing when the error occured?"
+#  And I should see 'Airbears sucks!' at the top of the page
+#  And I should see a text box underneath that asks "What were you doing when the error occured?" 
 
 # Page 2
 
@@ -45,8 +45,8 @@ Scenario: enter a new action
   Given I am on Page 2 for "Airbears Sucks!" with the correct information displayed
   And I fill in the text box with "trying to log out"
   And I click the submit arrow
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to log out" under that
+  Then I should see 'Airbears sucks!' at the top of the page
+  And I should see 'trying to log out' under that
   And I should see a text box underneath that asks "What are you trying to accomplish?"
   And I should be on Page 3
 
