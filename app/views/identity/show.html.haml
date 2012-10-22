@@ -3,25 +3,32 @@
   %div{ :id => "center-container" }
     %div{ :id => "tracking-box" }
       = @issue_name
+      Sucks!
       %br
+      %br
+      What did I do?
       %br
       = @issue_action
       %br
       %br
+      What did I want to accomplish?
+      %br
       = @issue_goal
     %div{ :id => "main-box" }
-      %center 
-        %p One Last Step!
-        %br
-        I am a
-      = link_to "Student"
-      = link_to "Professor"
-      = link_to "Staff"
-      %br 
-      %br
-      = form_tag do
-        %center
-          = label :identity, "(Doesn't describe you? Type something else)", '', :id => 'new-option'
-        %br
-        = text_field :put, :identity, :id => 'new-option-field'       
-        = submit_tag '', :id => 'submit_arrow'
+      %center
+        -# 
+          %p One Last Step!
+          %br
+          I am a
+          = form_tag do
+            = hidden_field_tag :put, :identity => "student"
+            = submit_tag "Student"
+          %br 
+          %br
+          %center
+            = label :identity, "(Doesn't describe you? Type something else)", '', :id => 'new-option'
+          %br
+        Last Step! Please help us identify yourself (e.g. student, professor)
+        = form_tag do
+          = text_field :put, :identity, :id => 'new-option-field'       
+          = submit_tag '', :id => 'submit_arrow'
