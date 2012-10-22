@@ -53,7 +53,9 @@ end
 Given /^I am on Page 3 for "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 3 for the issue \"#{issue_name}\""
   step "I should see \'#{issue_name} Sucks!\' at the top of the page"
-  step "I should see \"What were you doing when the problem occurred?\""
+  step "I should see \"#{Issue.find_by_name(issue_name).action}\""
+  step "I should see \"What was I doing:\""
+  step "I should see \"What were you trying to accomplish?\""
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
