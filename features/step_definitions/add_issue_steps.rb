@@ -13,14 +13,14 @@ Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
 end
 
 When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
-  fill_in("put_issue_name", :with => value)
+  fill_in("what-text", :with => value)
 end
 
 Given /^I click the submit arrow$/ do
   click_button("submit_arrow")
 end
 
-Then /^I should see '([^"]*)' at the top of the page$/ do |text|
+Then /^I should see '([^']*)' at the top of the page$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -28,8 +28,8 @@ Then /^I should see '([^"]*)' at the top of the page$/ do |text|
   end
 end
 
-Then /^I should see '([^"]*)'  under that$/ do |text|
-  if page.respond_to? :should
+Then /^I should see '(.*)' under that$/ do |text|
+    if page.respond_to? :should
     page.should have_content(text)
   else
     assert page.has_content?(text)
@@ -44,8 +44,14 @@ Given /^(?:|I )am on (.+ for .+")$/ do |page_name|
   visit path_to(page_name)
 end
 
-Given /^I am on Page 2 for "(.*?) Sucks!" with the correct information displayed$/ do |page_num, issue_name|
+Given /^I am on Page 2 for "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 2 for the issue \"#{issue_name}\""
+  step "I should see \'#{issue_name} Sucks!\' at the top of the page"
+  step "I should see \"What were you doing when the problem occurred?\""
+end
+
+Given /^I am on Page 3 for "(.*?)" with the correct information displayed$/ do |issue_name|
+  step "I am on Page 3 for the issue \"#{issue_name}\""
   step "I should see \'#{issue_name} Sucks!\' at the top of the page"
   step "I should see \"What were you doing when the problem occurred?\""
 end

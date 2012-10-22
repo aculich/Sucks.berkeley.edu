@@ -19,6 +19,9 @@ module NavigationHelpers
 	  '/'
 	when /^Page 2 for the issue "(.*)"$/
 	  "/action/#{Issue.find_by_name($1).id}"
+	  
+	when /^Page 3 for the issue "(.*)"$/
+	  "/goal/#{Issue.find_by_name($1).id}"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
