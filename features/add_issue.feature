@@ -36,8 +36,8 @@ Scenario: enter a new issue
 #  Then I should see a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
 #  And I choose "Airbears"
 #  Then I should be on Page 2
-#  And I should see “Airbears sucks!” at the top of the page
-#  And I should see a text box underneath that asks "What were you doing when the error occured?"
+#  And I should see 'Airbears sucks!' at the top of the page
+#  And I should see a text box underneath that asks "What were you doing when the error occured?" 
 
 # Page 2
 
@@ -45,22 +45,24 @@ Scenario: enter a new action
   Given I am on Page 2 for "Airbears Sucks!" with the correct information displayed
   And I fill in the text box with "trying to log out"
   And I click the submit arrow
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to log out" under that
+  Then I should see 'Airbears sucks!' at the top of the page
+  And I should see 'trying to log out' under that
   And I should see a text box underneath that asks "What are you trying to accomplish?"
   And I should be on Page 3
 
+"""
 Scenario: enter an existing action
   Given I am Page 2
   And I see “Airbears sucks!” at the top of the page
   And I see a text box underneath that asks "What were you doing when the error occured?"
-  And I type in "trying to" into the text box
-  Then I should see a drop-down menu with the entry "trying to get on the internet"
-  And I choose "trying to get on the internet"
+  And I type in "trying to get on the internet" into the text box
+#  Then I should see a drop-down menu with the entry "trying to get on the internet"
+#  And I choose "trying to get on the internet"
   Then I should see “Airbears sucks!” at the top of the page
   And I should see "trying to get on the internet" under that
   And I should see a text box underneath that asks "What are you trying to accomplish?"
   And I should be on Page 3
+"""
 
 # Page 3
 Scenario: see the correct information displayed on the third page
@@ -79,22 +81,26 @@ Scenario: enter a new goal
   Then I should see “Airbears sucks!” at the top of the page
   And I should see "trying to get on the internet" under that
   And I should see "to watch Hulu" under that
-  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
+#  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
   And I should be on Page 4
 
+"""
 Scenario: enter an existing goal
   Given I am Page 3
   And I see “Airbears sucks!” at the top of the page
   And I see "trying to get on the internet" under that
   And I see a text box underneath that asks "What are you trying to accomplish?"
-  And I type in "download" into the text box
-  Then I should see a drop-down menu with the entry "download lecture notes"
-  And I choose "download lecture notes"
+  And I type in "download lecture notes" into the text box
+#  Then I should see a drop-down menu with the entry "download lecture notes"
+#  And I choose "download lecture notes"
   Then I should see “Airbears sucks!” at the top of the page
   And I should see "trying to get on the internet" under that
   And I should see "download lecture notes" under that
-  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
+#  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
   And I should be on Page 4
+"""
 
 # Page 4
 Scenario: see the correct information displayed on the fourth page
@@ -102,14 +108,16 @@ Scenario: see the correct information displayed on the fourth page
   And I see “Airbears sucks!” at the top of the page
   And I see "trying to get on the internet" under that
   And I see "download lecture notes" under that
-  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+#  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
 
 Scenario: choose an identity-tag
   Given I am on Page 4
   And I see “Airbears sucks!” at the top of the page
   And I see "trying to get on the internet" under that
   And I see "download lecture notes" under that
-  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+#  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
   And I select "student"
   And I press "Submit"
   Then I should see “Airbears sucks!” at the top of the page
