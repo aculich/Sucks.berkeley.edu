@@ -3,6 +3,7 @@ class IdentityController < ApplicationController
   end
   def show
     issue = Issue.find_by_id(params[:issue_id])
+    @issue_id = issue.id
     @issue_name = issue.name
     @issue_action = issue.action
     @issue_goal = issue.goal
@@ -15,6 +16,7 @@ class IdentityController < ApplicationController
       else
         issue = Issue.find_by_id(params[:issue_id])
         identity = params[:put][:identity]
+        issue.identity_tags = identity
         issue.save
         redirect_to "/summary/#{issue_id}"
       end
