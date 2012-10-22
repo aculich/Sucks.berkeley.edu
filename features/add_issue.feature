@@ -115,7 +115,7 @@ Scenario: see the correct information displayed on the fourth page
   Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
 
 Scenario: choose an identity-tag
-  Given I am on Page 4
+  Given I am on page 4 for "Airbears" with the correct information displayed
   And I see “Airbears sucks!” at the top of the page
   And I see "trying to get on the internet" under that
   And I see "download lecture notes" under that

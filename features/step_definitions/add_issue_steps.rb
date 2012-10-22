@@ -56,6 +56,13 @@ Given /^I am on Page 3 for "(.*?)" with the correct information displayed$/ do |
   step "I should see \"What were you doing when the problem occurred?\""
 end
 
+Given /^I am on Page 4 for "(.*?)" with the correct information displayed$/ do |issue_name|
+  step "I am on Page 4 for the issue \"#{issue_name}\""
+  step "I should see \'#{issue_name} Sucks!\' at the top of the page"
+  step "I should see \"What were you doing when the problem occurred?\""
+end
+
+
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 
@@ -64,6 +71,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  page.content  is the entire content of the page as a string.
   assert /.*#{e1}.*#{e2}/m =~ page.body
 end
+
 
 # Make it easier to express checking or unchecking several boxes at once
 #  "When I uncheck the following ratings: PG, G, R"
