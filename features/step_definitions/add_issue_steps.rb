@@ -12,6 +12,23 @@ Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
   assert(find(:css,"#main-box>form>label").text == arg1)
 end
 
+When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
+  fill_in("put_issue_name", :with => value)
+end
+
+Given /^I click the submit arrow$/ do
+  click_button("submit_arrow")
+end
+
+Then /^I should see '([^"]*)' at the top of the page$/ do |text|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
+
+
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 

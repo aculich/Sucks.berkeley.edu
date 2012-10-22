@@ -20,14 +20,14 @@ Background: issues have been added to database
 # Page 1
 Scenario: see the correct information displayed on the front page
   Given I am on the Sucks.Berkeley.edu home page
-  Then I should see only a text box followed by the word "sucks!"
+  Then I should see only a text box followed by the word "Sucks!"
 
 Scenario: enter a new issue
   Given I am on the Sucks.Berkeley.edu home page
-  And I type "Telebears" into the text box
-  And I press "Continue"
-  Then I should be on Page 2
-  And I should see “Telebears sucks!” at the top of the page
+  And I fill in the text box with "Telebears"
+  And I click the submit arrow
+  Then I should be on Page 2 for the issue "Telebears"
+  And I should see 'Telebears Sucks!' at the top of the page
   And I should see a text box underneath that asks "What were you doing when the error occured?"
 
 Scenario: enter an existing issue
@@ -38,3 +38,88 @@ Scenario: enter an existing issue
   Then I should be on Page 2
   And I should see “Airbears sucks!” at the top of the page
   And I should see a text box underneath that asks "What were you doing when the error occured?"
+
+# Page 2
+Scenario: see the correct information displayed on the second page
+  Given I am on Page 2
+  And I see “Airbears sucks!” at the top of the page
+  Then I should see a text box underneath that asks "What were you doing when the error occured?"
+
+Scenario: enter a new action
+  Given I am on Page 2
+  And I see “Airbears sucks!” at the top of the page
+  And I see a text box underneath that asks "What were you doing when the error occured?"
+  And I type in "trying to log out" into the text box
+  And I press "Continue"
+  Then I should see “Airbears sucks!” at the top of the page
+  And I should see "trying to log out" under that
+  And I should see a text box underneath that asks "What are you trying to accomplish?"
+  And I should be on Page 3
+
+Scenario: enter an existing action
+  Given I am Page 2
+  And I see “Airbears sucks!” at the top of the page
+  And I see a text box underneath that asks "What were you doing when the error occured?"
+  And I type in "trying to" into the text box
+  Then I should see a drop-down menu with the entry "trying to get on the internet"
+  And I choose "trying to get on the internet"
+  Then I should see “Airbears sucks!” at the top of the page
+  And I should see "trying to get on the internet" under that
+  And I should see a text box underneath that asks "What are you trying to accomplish?"
+  And I should be on Page 3
+
+# Page 3
+Scenario: see the correct information displayed on the third page
+  Given I am on Page 3
+  And I see “Airbears sucks!” at the top of the page
+  And I see "trying to get on the internet" under that
+  Then I should see a text box underneath that asks "What are you trying to accomplish?"
+
+Scenario: enter a new goal
+  Given I am on Page 3
+  And I see “Airbears sucks!” at the top of the page
+  And I see "trying to get on the internet" under that
+  And I see a text box underneath that asks "What are you trying to accomplish?"
+  And I type in "to watch Hulu" into the text box
+  And I press "Continue"
+  Then I should see “Airbears sucks!” at the top of the page
+  And I should see "trying to get on the internet" under that
+  And I should see "to watch Hulu" under that
+  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  And I should be on Page 4
+
+Scenario: enter an existing goal
+  Given I am Page 3
+  And I see “Airbears sucks!” at the top of the page
+  And I see "trying to get on the internet" under that
+  And I see a text box underneath that asks "What are you trying to accomplish?"
+  And I type in "download" into the text box
+  Then I should see a drop-down menu with the entry "download lecture notes"
+  And I choose "download lecture notes"
+  Then I should see “Airbears sucks!” at the top of the page
+  And I should see "trying to get on the internet" under that
+  And I should see "download lecture notes" under that
+  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  And I should be on Page 4
+
+# Page 4
+Scenario: see the correct information displayed on the fourth page
+  Given I am on Page 4
+  And I see “Airbears sucks!” at the top of the page
+  And I see "trying to get on the internet" under that
+  And I see "download lecture notes" under that
+  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+
+Scenario: choose an identity-tag
+  Given I am on Page 4
+  And I see “Airbears sucks!” at the top of the page
+  And I see "trying to get on the internet" under that
+  And I see "download lecture notes" under that
+  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  And I select "student"
+  And I press "Submit"
+  Then I should see “Airbears sucks!” at the top of the page
+  And I should see "trying to get on the internet" under that
+  And I should see "download lecture notes" under that
+  And I should see "student" under that
+  And I should be on Page 5
