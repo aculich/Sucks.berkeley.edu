@@ -8,7 +8,7 @@ Background: issues have been added to database
 
   Given the following issues exist:
   | name    	        | action				 | goal					| identity_tags	 | date_entered |
-  | Airbears            | trying to get on the internet    	 | download lecture notes     		| student	 | 25-Nov-1992  |
+  | Airbears            | trying to get on the internet    	 | to watch Hulu	     		| student	 | 25-Nov-1992  |
   | Perimeter Buses     | waiting for the bus to come		 | get to interview on time   		| professor	 | 26-Oct-1984  |
   | CS169               | trying to walk from Soda to LiKaShing	 | get to class in 10 minutes  		| TA 		 | 21-Jul-1989  |
   | BSpace              | trying to access Anthro160 homepage    | trying to view midterm study guide 	| GSI 		 | 10-Aug-2011  |
@@ -45,7 +45,7 @@ Scenario: enter a new action
 
 Scenario: enter a new goal
   Given I am on Page 3 for "Airbears" with the correct information displayed
-  And I fill in the text box with "to watch Hulut"
+  And I fill in the text box with "to watch Hulu"
   And I click the submit arrow
   Then I should be on Page 4 for the issue "Airbears"
   Then I should see 'Airbears Sucks!' at the top of the page
@@ -55,25 +55,22 @@ Scenario: enter a new goal
 #  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
 
 # Page 4
-Scenario: see the correct information displayed on the fourth page
-  Given I am on Page 4
-  And I see “Airbears sucks!” at the top of the page
-  And I see "trying to get on the internet" under that
-  And I see "download lecture notes" under that
-#  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
-  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
 
 Scenario: choose an identity-tag
-  Given I am on page 4 for "Airbears" with the correct information displayed
-  And I see “Airbears sucks!” at the top of the page
-  And I see "trying to get on the internet" under that
-  And I see "download lecture notes" under that
+  Given I am on Page 4 for "Airbears" with the correct information displayed
 #  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
-  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
-  And I select "student"
-  And I press "Submit"
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to get on the internet" under that
-  And I should see "download lecture notes" under that
-  And I should see "student" under that
-  And I should be on Page 5
+  And I fill in the text box with "student"
+  And I click the submit arrow
+  Then I should be on Page 5 for the issue "Airbears"
+  And I should see 'Airbears Sucks!' at the top of the page
+  And I should see 'What was I doing?' under that
+  And I should see 'trying to get on the internet' under that
+  And I should see 'What did I want to accomplish?' under that
+  And I should see 'to watch Hulu' under that
+  And I should see 'Who am I?' under that
+  And I should see 'student' under that
+
+# Page 5
+
+Scenario: Summary Page displays the correct information
+  Given I am on Page 5 for "Airbears" with the correct information displayed
