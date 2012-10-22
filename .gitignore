@@ -17,3 +17,6 @@
 
 # Ignore Emacs *~ backup files
 *~
+
+# Ignore all of the coverage files
+/coverage/*
