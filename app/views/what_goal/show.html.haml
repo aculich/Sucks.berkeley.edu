@@ -2,12 +2,10 @@
 %section
   %div{ :id => "center-container" }
     %div{ :id => "tracking-box" }
-      -# 
-        @issue_name
-      Airbears Sucks!
+      = @issue_name
       %br
       %br
-      Action: blah blah blah
+      = @issue_action
     %div{ :id => "main-box" }
       = form_tag do
         = label :issue_goal, "What were you trying to accomplish?", ''

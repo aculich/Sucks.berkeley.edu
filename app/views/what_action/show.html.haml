@@ -2,13 +2,11 @@
 %section
   %div{ :id => "center-container" }
     %div{ :id => "tracking-box" }
-      -# 
-        @issue_name
-      Airbears Sucks!
+      = @issue_name
     %div{ :id => "main-box" }
       = form_tag do
         = label :issue_action, "What were you doing when the problem occurred?", ''
         %br
         %br
-        = text_area :put, :issue_action        
-        = submit_tag '', :id => 'what_action_submit'
+        = text_area :put, :issue_action
+        = submit_tag '', :id => 'what_sucks_submit'
