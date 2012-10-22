@@ -28,16 +28,16 @@ Scenario: enter a new issue
   And I click the submit arrow
   Then I should be on Page 2 for the issue "Telebears"
   And I should see 'Telebears Sucks!' at the top of the page
-  And I should see a text box underneath that asks "What were you doing when the error occured?"
+  And I should see "What were you doing when the problem occured?"
 
-Scenario: enter an existing issue
-  Given I am on the Sucks.Berkeley.edu home page
-  And I type "Air" into the text box
-  Then I should see a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
-  And I choose "Airbears"
-  Then I should be on Page 2
-  And I should see “Airbears sucks!” at the top of the page
-  And I should see a text box underneath that asks "What were you doing when the error occured?"
+#Scenario: enter an existing issue
+#  Given I am on the Sucks.Berkeley.edu home page
+#  And I type "Air" into the text box
+#  Then I should see a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
+#  And I choose "Airbears"
+#  Then I should be on Page 2
+#  And I should see “Airbears sucks!” at the top of the page
+#  And I should see a text box underneath that asks "What were you doing when the error occured?"
 
 # Page 2
 Scenario: see the correct information displayed on the second page
