@@ -40,17 +40,11 @@ Scenario: enter a new issue
 #  And I should see a text box underneath that asks "What were you doing when the error occured?"
 
 # Page 2
-Scenario: see the correct information displayed on the second page
-  Given I am on Page 2
-  And I see “Airbears sucks!” at the top of the page
-  Then I should see a text box underneath that asks "What were you doing when the error occured?"
 
 Scenario: enter a new action
-  Given I am on Page 2
-  And I see “Airbears sucks!” at the top of the page
-  And I see a text box underneath that asks "What were you doing when the error occured?"
-  And I type in "trying to log out" into the text box
-  And I press "Continue"
+  Given I am on Page 2 for "Airbears Sucks!" with the correct information displayed
+  And I fill in the text box with "trying to log out"
+  And I click the submit arrow
   Then I should see “Airbears sucks!” at the top of the page
   And I should see "trying to log out" under that
   And I should see a text box underneath that asks "What are you trying to accomplish?"

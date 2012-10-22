@@ -16,6 +16,12 @@ When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
   fill_in("put_issue_name", :with => value)
 end
 
+
+When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
+  fill_in("what-text", :with => value)
+end
+
+
 Given /^I click the submit arrow$/ do
   click_button("submit_arrow")
 end
@@ -28,6 +34,27 @@ Then /^I should see '([^"]*)' at the top of the page$/ do |text|
   end
 end
 
+Then /^I should see '([^"]*)'  under that$/ do |text|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
+
+Given /^(?:|I )am on (.+ page)$/ do |page_name|
+  visit path_to(page_name)
+end
+
+Given /^(?:|I )am on (.+ for .+")$/ do |page_name|
+  visit path_to(page_name)
+end
+
+Given /^I am on Page 2 for "(.*?) Sucks!" with the correct information displayed$/ do |page_num, issue_name|
+  step "I am on Page 2 for the issue \"#{issue_name}\""
+  step "I should see \'#{issue_name} Sucks!\' at the top of the page"
+  step "I should see \"What were you doing when the problem occurred?\""
+end
 
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
