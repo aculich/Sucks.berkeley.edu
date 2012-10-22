@@ -2,7 +2,6 @@ class SummaryController < ApplicationController
   def index
   end
   def show
-    raise params.inspect
     issue = Issue.find_by_id(params[:issue_id])
     @issue_id = issue.id
     @issue_name = issue.name
