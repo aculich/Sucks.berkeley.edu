@@ -30,7 +30,7 @@ header {
   padding: 1.875em 1em;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 #main-box form {
@@ -72,6 +72,20 @@ header {
 #main-box input[type='submit']:hover{
   cursor: pointer;
   background-position: left;
+}
+
+#main-box p {
+  font-size: 1em;
+  margin: -0.5em 0em 0em 0em;
+  color: #666;
+}
+
+#new-option {
+  font-size: 0.625em;
+}
+
+#main-box #new-option-field {
+  width: 80%;
 }
 
 #tracking-box {

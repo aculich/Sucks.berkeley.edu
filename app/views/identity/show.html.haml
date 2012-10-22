@@ -10,13 +10,18 @@
       %br
       Goal: blah blah blah
     %div{ :id => "main-box" }
-      %p I am a
-      = link_to '/', "Student"
-      = link_to '/', "Professor"
-      = link_to '/', "Staff" 
+      %center 
+        %p One Last Step!
+        %br
+        I am a
+      = link_to "Student"
+      = link_to "Professor"
+      = link_to "Staff"
+      %br 
+      %br
       = form_tag do
-        = label :identity, "(Doesn't describe you? Type something else)", ''
+        %center
+          = label :identity, "(Doesn't describe you? Type something else)", '', :id => 'new-option'
         %br
-        %br
-        = text_field :put, :identity       
+        = text_field :put, :identity, :id => 'new-option-field'       
         = submit_tag '', :id => 'identity_submit'
