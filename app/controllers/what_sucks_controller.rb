@@ -6,12 +6,12 @@ class WhatSucksController < ApplicationController
     issue_name = params[:put][:issue_name]
     if issue_name == "" or issue_name == nil
       flash[:notice] = "Please enter 1-2 words about what sucks!"
-      redirect_to "/what_sucks/index"
+      redirect_to "/what_sucks/index" and return
     else
       issue = Issue.new
       issue.name = params[:put][:issue_name]
       issue.save
-      redirect_to "/action/#{issue.id}"
+      redirect_to "/action/#{issue.id}" and return
     end
   end
 end

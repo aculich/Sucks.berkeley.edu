@@ -7,12 +7,12 @@ class WhatActionController < ApplicationController
       issue_action = params[:put][:issue_action]
       if issue_action == "" or issue_action == nil
         flash[:notice] = "Please answer the question!"
-        redirect_to "/action/#{issue_id}"
+        redirect_to "/action/#{issue_id}" and return
       else
         issue = Issue.find_by_id(params[:issue_id])
         issue.action = params[:put][:issue_action]
         issue.save
-        redirect_to "/goal/#{issue_id}"
+        redirect_to "/goal/#{issue_id}" and return
       end
     end
   end

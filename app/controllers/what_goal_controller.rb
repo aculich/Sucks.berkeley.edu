@@ -15,7 +15,7 @@ class WhatGoalController < ApplicationController
         issue = Issue.find_by_id(params[:issue_id])
         issue.goal = params[:put][:issue_goal]
         issue.save
-        redirect_to "/identity/#{issue_id}"
+        redirect_to "/identity/#{issue_id}" and return
       end
     end
   end
