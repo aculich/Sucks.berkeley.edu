@@ -16,12 +16,6 @@ When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
   fill_in("put_issue_name", :with => value)
 end
 
-
-When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
-  fill_in("what-text", :with => value)
-end
-
-
 Given /^I click the submit arrow$/ do
   click_button("submit_arrow")
 end
