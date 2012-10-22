@@ -28,7 +28,7 @@ Scenario: enter a new issue
   And I click the submit arrow
   Then I should be on Page 2 for the issue "Telebears"
   And I should see 'Telebears Sucks!' at the top of the page
-  And I should see "What were you doing when the problem occured?"
+  And I should see "What were you doing when the problem occurred?"
 
 #Scenario: enter an existing issue
 #  Given I am on the Sucks.Berkeley.edu home page
