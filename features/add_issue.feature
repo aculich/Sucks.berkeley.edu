@@ -34,11 +34,11 @@ Scenario: enter a new issue
 
 Scenario: enter a new action
   Given I am on Page 2 for "Airbears" with the correct information displayed
-  And I fill in the text box with "trying to log out"
+  And I fill in the text box with "trying to log in"
   And I click the submit arrow
   Then I should be on Page 3 for the issue "Airbears"
   Then I should see 'Airbears Sucks!' at the top of the page
-  And I should see 'trying to log out' under that
+  And I should see 'trying to log in' under that
   And I should see "What were you trying to accomplish?"
 
 # Page 3
@@ -59,7 +59,7 @@ Scenario: enter a new goal
 Scenario: choose an identity-tag
   Given I am on Page 4 for "Airbears" with the correct information displayed
 #  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
-  And I fill in the text box with "student"
+  And I fill in the text box with "hobo"
   And I click the submit arrow
   Then I should be on Page 5 for the issue "Airbears"
   And I should see 'Airbears Sucks!' at the top of the page
@@ -68,7 +68,7 @@ Scenario: choose an identity-tag
   And I should see 'What did I want to accomplish?' under that
   And I should see 'to watch Hulu' under that
   And I should see 'Who am I?' under that
-  And I should see 'student' under that
+  And I should see 'hobo' under that
 
 # Page 5
 
