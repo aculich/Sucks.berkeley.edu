@@ -54,9 +54,10 @@ Sucks::Application.routes.draw do
   root :to => 'what_sucks#index'
 
   match '/what_sucks/index' => 'what_sucks#create', :method => 'put'
-  match '/action/:issue_id' => 'what_action#show', :method => 'get'
+  match '/action/:issue_id' => 'what_action#show'
   match '/goal/:issue_id', :to => 'what_goal#show'
   match '/identity/:issue_id', :to => 'identity#show'
+  match '/summary/:issue_id', :to => 'summary#show'
   
 
   # See how all your routes lay out with "rake routes"
