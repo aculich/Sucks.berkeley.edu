@@ -13,6 +13,11 @@ header {
   z-index: 5;
 }
 
+header a {
+  text-decoration: none;
+  color: #333;
+}
+
 #center-container {
   position: absolute; 
   top: 25%;
