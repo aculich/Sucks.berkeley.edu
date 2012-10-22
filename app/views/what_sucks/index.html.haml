@@ -2,6 +2,6 @@
   %div{ :id => "center-container" }
     %div{ :id => "main-box" }
       = form_tag do
-        = text_field :put, :issue_name, :class => 'what-text'
+        = text_field :put, :issue_name, :name => 'what-text'
         = label :issue, "sucks!", ''
         = submit_tag '', :id => 'submit_arrow'
