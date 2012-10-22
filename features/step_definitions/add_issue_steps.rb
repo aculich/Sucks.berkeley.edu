@@ -58,7 +58,6 @@ Given /^I am on Page 3 for "(.*?)" with the correct information displayed$/ do |
   step "I should see \"What were you trying to accomplish?\""
 end
 
-<<<<<<< HEAD
 Given /^I am on Page 4 for "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 4 for the issue \"#{issue_name}\""
   step "I should see \'#{issue_name} Sucks!\' at the top of the page"
