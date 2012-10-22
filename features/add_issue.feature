@@ -30,17 +30,6 @@ Scenario: enter a new issue
   And I should see 'Telebears Sucks!' at the top of the page
   And I should see "What were you doing when the problem occurred?"
 
-"""
-Scenario: enter an existing issue
-  Given I am on the Sucks.Berkeley.edu home page
-  And I type "Air" into the text box
-  Then I should see a drop-down menu with the entries "Airbears", "Airbruins", and "Airplatypuses"
-  And I choose "Airbears"
-  Then I should be on Page 2
-  And I should see 'Airbears sucks!' at the top of the page
-  And I should see a text box underneath that asks "What were you doing when the error occured?" 
-"""
-
 # Page 2
 
 Scenario: enter a new action
@@ -50,60 +39,20 @@ Scenario: enter a new action
   Then I should be on Page 3 for the issue "Airbears"
   Then I should see 'Airbears Sucks!' at the top of the page
   And I should see 'trying to log out' under that
-  And I should see "What were you doing when the problem occurred?"
-  And I should see "What are you trying to accomplish?"
-
-"""
-Scenario: enter an existing action
-  Given I am Page 2
-  And I see “Airbears sucks!” at the top of the page
-  And I see a text box underneath that asks "What were you doing when the error occured?"
-  And I type in "trying to get on the internet" into the text box
-  Then I should see a drop-down menu with the entry "trying to get on the internet"
-  And I choose "trying to get on the internet"
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to get on the internet" under that
-  And I should see a text box underneath that asks "What are you trying to accomplish?"
-  And I should be on Page 3
-"""
+  And I should see "What were you trying to accomplish?"
 
 # Page 3
-Scenario: see the correct information displayed on the third page
-  Given I am on Page 3 for "Airbears" with the correct information displayed
-  And I see “Airbears sucks!” at the top of the page
-  And I see "trying to get on the internet" under that
-  Then I should see a text box underneath that asks "What are you trying to accomplish?"
 
 Scenario: enter a new goal
-  Given I am on Page 3
-  And I see “Airbears sucks!” at the top of the page
-  And I see "trying to get on the internet" under that
-  And I see a text box underneath that asks "What are you trying to accomplish?"
-  And I type in "to watch Hulu" into the text box
-  And I press "Continue"
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to get on the internet" under that
-  And I should see "to watch Hulu" under that
-  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
+  Given I am on Page 3 for "Airbears" with the correct information displayed
+  And I fill in the text box with "to watch Hulut"
+  And I click the submit arrow
+  Then I should be on Page 4 for the issue "Airbears"
+  Then I should see 'Airbears Sucks!' at the top of the page
+  And I should see 'trying to get on the internet' under that
+  And I should see 'to watch Hulu' under that
+  Then I should see "Last Step! Please help us identify yourself (e.g. student, professor)"
 #  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
-  And I should be on Page 4
-
-"""
-Scenario: enter an existing goal
-  Given I am Page 3
-  And I see “Airbears sucks!” at the top of the page
-  And I see "trying to get on the internet" under that
-  And I see a text box underneath that asks "What are you trying to accomplish?"
-  And I type in "download lecture notes" into the text box
-#  Then I should see a drop-down menu with the entry "download lecture notes"
-#  And I choose "download lecture notes"
-  Then I should see “Airbears sucks!” at the top of the page
-  And I should see "trying to get on the internet" under that
-  And I should see "download lecture notes" under that
-  Then I should see a text box underneath that asks "Last Step! Please help us identify yourself (e.g. student, professor)"
-#  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
-  And I should be on Page 4
-"""
 
 # Page 4
 Scenario: see the correct information displayed on the fourth page
