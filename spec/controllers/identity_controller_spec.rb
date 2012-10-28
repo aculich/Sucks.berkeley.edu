@@ -10,7 +10,7 @@ describe IdentityController do
 #  end
 
   describe "clicking on the submit button with parameters" do
-    it "should link to page_five with name, action, goal, identity parameter" do
+    it "should link to summary page with name, action, goal, identity parameter" do
       issue = Issue.create()
       post :show, :issue_id => issue.id, "what-text" => "cookie monster", :method => "put"
       response.should redirect_to("/summary/#{issue.id}")

@@ -7,7 +7,7 @@ describe WhatGoalController do
 #  end
   
   describe "Clicking on submit with parameters filled out" do
-    it "should link to page_four with name, action, goal parameter" do
+    it "should link to identity page with name, action, goal parameter" do
       issue = Issue.create()
       post :show, :issue_id => issue.id, "what-text" => "finished 169 hw", :method => "put"
       response.should redirect_to("/identity/#{issue.id}")
