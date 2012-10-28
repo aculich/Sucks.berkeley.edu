@@ -51,14 +51,12 @@ Scenario: enter a new goal
   Then I should see 'Airbears Sucks!' at the top of the page
   And I should see 'trying to get on the internet' under that
   And I should see 'to watch Hulu' under that
-  Then I should see "Last Step! Please help us identify yourself (e.g. student, professor)"
-#  And I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
+  Then I should see "One Last Step!"
 
 # Page 4
 
-Scenario: choose an identity-tag
+Scenario: Enter an identity tag
   Given I am on Page 4 for "Airbears" with the correct information displayed
-#  Then I should see a radio form underneath asking "Help us identify you:" with the choices "student", "faculty", "staff", and "other"
   And I fill in the text box with "hobo"
   And I click the submit arrow
   Then I should be on Page 5 for the issue "Airbears"
@@ -70,7 +68,21 @@ Scenario: choose an identity-tag
   And I should see 'Who am I?' under that
   And I should see 'hobo' under that
 
+Scenario Outline: Choose an identity tag 
+  Given I am on Page 4 for "Airbears" with the correct information displayed
+  When I click the identity tag for <button name>
+  Then I should be on Page 5 for the issue "Airbears"
+  And I should see <button name>
+
+  Examples:
+    | button name |
+    | "Student"   |
+    | "Professor" |
+    | "Staff"     | 
+
 # Page 5
 
 Scenario: Summary Page displays the correct information
   Given I am on Page 5 for "Airbears" with the correct information displayed
+  When I click "Submit Issue"
+  Then I should be on the index page

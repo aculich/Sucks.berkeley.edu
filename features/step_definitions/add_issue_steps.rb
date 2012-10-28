@@ -65,7 +65,7 @@ Given /^I am on Page 4 for "(.*?)" with the correct information displayed$/ do |
   step "I should see \"#{Issue.find_by_name(issue_name).action}\""
   step "I should see \"What did I want to accomplish?\""
   step "I should see \"#{Issue.find_by_name(issue_name).goal}\""
-  step "I should see \"Last Step! Please help us identify yourself (e.g. student, professor)\""
+  step "I should see \"One Last Step!\""
 end
 
 Given /^I am on Page 5 for "(.*?)" with the correct information displayed$/ do |issue_name|
@@ -86,3 +86,4 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
     assert page.has_content?(text)
   end
 end
+
