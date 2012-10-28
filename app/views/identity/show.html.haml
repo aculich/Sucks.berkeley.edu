@@ -15,19 +15,19 @@
       = @issue_goal
     %div{ :id => "main-box" }
       %center
-        -# 
-          %p One Last Step!
-          %br
-          I am a
-          = form_tag do
-            = hidden_field_tag :put, :identity => "student"
-            = submit_tag "Student"
-          %br 
-          %br
-          %center
-            = label :identity, "(Doesn't describe you? Type something else)", '', :id => 'new-option'
-          %br
-        Last Step! Please help us identify yourself (e.g. student, professor)
+        %p One Last Step!
+        %br
+        I am a
+        %br
+        %br
+        = button_to "Student", {:url => "http://#{request.host}:#{request.port.to_s}/identity/#{@issue_id}", :'what-text' => 'Student', :method => :post}, :id => 'student-identity', :class => 'id-button'
+        = button_to "Professor", {:url => "http://#{request.host}:#{request.port.to_s}/identity/#{@issue_id}", :'what-text' => 'Professor', :method => :post}, :id => 'professor-identity', :class => 'id-button'
+        = button_to "Staff", {:url => "http://#{request.host}:#{request.port.to_s}/identity/#{@issue_id}", :'what-text' => 'Staff', :method => :post}, :id => 'staff-identity', :class => 'id-button'
+        %br 
+        %br
+        %center
+          = label :identity, "(Doesn't describe you? Type something else)", '', :id => 'new-option'
+        %br
         = form_tag do
           = text_field :put, :identity, :id => 'new-option-field', :name => 'what-text'       
-          = submit_tag '', :id => 'submit_arrow'
+          = submit_tag '', :id => 'submit-arrow'
