@@ -1,0 +1,8 @@
+%section
+  %div{ :id => "center-container" }
+    %div{ :id => "main-box" }
+      Index of Issues:
+      %br
+      %br
+      - @issues.each do |issue|
+        %div= issue.name + " sucks!"
