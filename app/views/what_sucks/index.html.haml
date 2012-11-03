@@ -3,5 +3,5 @@
     %div{ :id => "main-box" }
       = form_tag do
         = text_field :put, :issue_name, :name => 'what-text'
-        = label :issue, "sucks!", ''
+        = label :issue, :name, "sucks!"
         = submit_tag '', :id => 'submit_arrow'
