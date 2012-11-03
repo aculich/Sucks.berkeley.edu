@@ -58,7 +58,6 @@ Sucks::Application.routes.draw do
   match '/goal/:issue_id', :to => 'what_goal#show'
   match '/identity/:issue_id', :to => 'identity#show'
   match '/summary/:issue_id', :to => 'summary#show'
-  match '/end_user_index/:issue_name'
 
   match 'end_user_index' => 'what_user_index#show'
 
