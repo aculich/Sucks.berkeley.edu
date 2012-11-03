@@ -11,7 +11,8 @@ class WhatSucksController < ApplicationController
       issue = Issue.new
       issue.name = params["what-text"]
       issue.save
-      redirect_to "/action/#{issue.id}" and return
+#      redirect_to "/action/#{issue.id}" and return
+      redirect_to "/end_user_index/#{issue_name}"
     end
   end
 end
