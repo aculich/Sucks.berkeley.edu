@@ -1,8 +1,20 @@
 %section
   %div{ :id => "center-container" }
-    %div{ :id => "main-box" }
-      Index of Issues:
-      %br
-      %br
+    %div{ :id => "issues-table" }
+      %div{ :id => "faux-th" }
+        %div{ :class => "col1" }
+          &nbsp&nbsp&nbspWhat Sucks?
+        %div{ :class => "col2" }
+          %center
+            Date Added
+        %div{ :class => "col3" }
+          %center
+            Votes
       - @issues.each do |issue|
-        %div= issue.name + " sucks!"
+        %a{ :href => "/summary/#{issue.id}" }
+          %div{ :id => "faux-tr" }
+            %div{ :class => "col1" }= "   " + issue.name
+            %div{ :class => "col2" }
+              %center= "Fake Date"
+            %div{ :class => "col3" }
+              %center= "Fake #"
