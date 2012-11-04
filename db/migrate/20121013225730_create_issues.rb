@@ -5,7 +5,7 @@ class CreateIssues < ActiveRecord::Migration
       t.datetime :date_entered
       t.integer :votes
       t.string :link_to_uservoice
-#      t.string :action
+      t.string :action
 #      t.string :goal
 #      t.text :identity_tags
 #      t.datetime :date_entered

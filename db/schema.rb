@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20121013225730) do
     t.datetime "date_entered"
     t.integer  "votes"
     t.string   "link_to_uservoice"
+    t.string   "action"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

@@ -1,0 +1,22 @@
+%section
+  %div{ :id => "center-container" }
+    %div{ :id => "content-container" }
+      %div{ :class => "swiss-army-box" }
+        %div{ :class => "content-title" }
+          Help us fill out this sentence!
+        %center  
+          = form_tag({}, :id => "user-story-form") do
+            = label :issue, :name, "I want"
+            = text_field :put, :want_text, :name => 'want-text'
+            %br
+            %br
+            = label :issue, :name, "so that"
+            = text_field :put, :so_text, :name => 'so-text'
+            %br
+            %br
+            = submit_tag "SUBMIT", :id => 'submit-arrow'   
+      %div{ :class => "swiss-army-box" }
+        %div{ :class => "content-title" }
+          Know how to solve this issue?
+        %center
+          =link_to "I AM A DEVELOPER", "" + params[:issue_name], :class => 'content-button'

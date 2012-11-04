@@ -1,4 +1,4 @@
-class EndUserIndexController < ApplicationControllers
+class EndUserIndexController < ApplicationController
 
   def index
   end
