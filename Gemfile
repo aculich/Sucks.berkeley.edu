@@ -32,7 +32,7 @@ group :test, :development do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
   gem 'sqlite3'
-  gem 'ruby-debug19'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do
