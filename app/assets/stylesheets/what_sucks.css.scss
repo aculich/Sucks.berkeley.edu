@@ -184,10 +184,10 @@ header a span{
 }
 
 .swiss-army-box {
-  margin: 0 auto;
+  margin: 0 auto 1em;
   width: 100%;
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #FFF;
+  color: #666;
   background-color: #FFF;
   float: left;
   -webkit-box-shadow: 0em 0em .5em .05em #333;
@@ -221,4 +221,42 @@ header a span{
   background-color: #33BEF5;
 }
 
+#user-story-form {
+  padding: 1em;
+  width: 60%;
+}
+
+#user-story-form input {
+  width: 50%;
+  height: 1.5em;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: #666;
+  margin: 0em .325em;
+}
+
+#user-story-form input:focus {
+  outline: none;
+}
+
+#user-story-form input[type='submit']{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #1F87E0;
+  color: #FFF;
+  font-family: "Open Sans Condensed", "sans-serif";
+  padding: .225em .725em 1.725em .725em;
+  border: 0 none;
+  display: inline-block;
+  font-size: .8em;
+  text-decoration: none;
+  width: auto;
+  margin: 0;
+}
+
+#user-story-form input[type='submit']:hover{
+  background-color: #33BEF5;
+  cursor: pointer;
+}
 
