@@ -24,11 +24,16 @@ class SpecificIssueController < ApplicationController
 					   "created_at"=>Time.now})
 	
 	else
+		issue_name = params["what-issue"]
+		issues = Issue.find_all_by_name(:issue_name)
+=begin
+these are comments:
 	  issue = Issue.find_by_id(params[:issue_id])
 	  issue.i_want = params["want-text"]
 	  issue.so_that = params["so-text"]
 	  issue.save!
    	  redirect_to "/issue_info/#{issue_name}"
+=end
 	end
   end
   
