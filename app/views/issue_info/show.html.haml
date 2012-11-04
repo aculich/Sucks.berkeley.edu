@@ -7,11 +7,11 @@
             = "#{@issue_name} Sucks!"
           %br
           %br
-          As a student in Moffit 101
+          = "As a " + @issue.as_a
           %br
-          So that I can access lecture notes
+          = "So that " + @issue.so_that
           %br
-          I want to be able to get wireless access to Airbears
+          = "I want " + @issue.i_want
           %br
         %center
           %div{ :class => "progress" }
