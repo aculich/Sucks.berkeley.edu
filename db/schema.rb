@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013225730) do
+ActiveRecord::Schema.define(:version => 20121104041138) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "issue_name"
+    t.string   "commentor_name"
+    t.datetime "date"
+    t.string   "details"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "issues", :force => true do |t|
     t.string   "name"
@@ -19,6 +28,9 @@ ActiveRecord::Schema.define(:version => 20121013225730) do
     t.integer  "votes"
     t.string   "link_to_uservoice"
     t.string   "action"
+    t.string   "as_a"
+    t.string   "so_that"
+    t.string   "i_want"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
