@@ -1,3 +1,4 @@
+=begin
 class WhatActionController < ApplicationController
   def show
     issue = Issue.find_by_id(params[:issue_id])
@@ -17,3 +18,4 @@ class WhatActionController < ApplicationController
     end
   end
 end
+=end

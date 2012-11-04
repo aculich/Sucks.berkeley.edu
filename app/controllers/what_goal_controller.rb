@@ -1,3 +1,4 @@
+=begin
 class WhatGoalController < ApplicationController
   def index
   end
@@ -20,3 +21,4 @@ class WhatGoalController < ApplicationController
     end
   end
 end
+=end

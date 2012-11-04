@@ -1,3 +1,4 @@
+=begin
 class SummaryController < ApplicationController
   def index
   end
@@ -10,3 +11,4 @@ class SummaryController < ApplicationController
     @issue_identity = issue.identity_tags
   end
 end
+=end

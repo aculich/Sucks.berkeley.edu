@@ -1,3 +1,4 @@
+=begin
 class IdentityController < ApplicationController
   def index
   end
@@ -23,3 +24,4 @@ class IdentityController < ApplicationController
     end
   end
 end
+=end
