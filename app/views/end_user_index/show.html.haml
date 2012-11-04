@@ -13,7 +13,7 @@
               %center
                 Votes
             - @issues.each do |issue|
-              %a{ :href => "/issues/#{issue.id}?vote=true" }
+              %a{ :href => "/issue_info/#{issue.id}?vote=true" }
                 %div{ :id => "faux-tr" }
                   %div{ :class => "col1" }= "   " + issue.name
                   %div{ :class => "col2" }

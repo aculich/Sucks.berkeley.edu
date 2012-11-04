@@ -60,7 +60,7 @@ match '/identity/:issue_id', :to => 'identity#show'
 match '/summary/:issue_id', :to => 'summary#show'
 
 match 'end_user_index/:issue_name' => 'end_user_index#show'
-match 'issue_info/:issue_name' => 'issue_info#show'
+match 'issue_info/:issue_id' => 'issue_info#show'
 match 'specific_issue/:issue_name' => 'specific_issue#show'
 
   resources :issues

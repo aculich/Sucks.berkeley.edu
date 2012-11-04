@@ -204,6 +204,12 @@ header a span{
   color: #666;
 }
 
+.swiss-army-box p {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
 .content-button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -245,7 +251,7 @@ header a span{
   border-radius: 5px;
   background-color: #1F87E0;
   color: #FFF;
-  font-family: "Open Sans Condensed", "sans-serif";
+  font-family: "Open Sans Condensed", sans-serif;
   padding: .225em .725em 1.725em .725em;
   border: 0 none;
   display: inline-block;
