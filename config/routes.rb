@@ -60,7 +60,7 @@ Sucks::Application.routes.draw do
   match '/summary/:issue_id', :to => 'summary#show'
 
   match 'end_user_index/:issue_name' => 'end_user_index#show'
-  match 'specific_issue/:issue_name' => 'specific_user_index#show'
+  match 'specific_issue/:issue_name' => 'specific_issue#show'
 
   resources :issues
   
