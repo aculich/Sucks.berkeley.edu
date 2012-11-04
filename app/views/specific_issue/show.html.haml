@@ -3,7 +3,7 @@
     %div{ :id => "content-container" }
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
-          Help us fill out this sentence!
+          = @issue_name + " sucks! Why? Help us fill out this sentence!"
         %center  
           = form_tag({}, :id => "user-story-form") do
             = label :issue, :name, "I want"
