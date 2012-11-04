@@ -23,7 +23,7 @@
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           - if @issues == []
-            = "You're the first to have a trouble with " + params[:issue_name] + ". Please create a new issue!"
+            = "You're the first to have trouble with " + params[:issue_name] + ". Please create a new issue!"
           - else  
             Want to create a new issue for
             = params[:issue_name] + "?"
