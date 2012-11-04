@@ -3,26 +3,29 @@
     %div{ :id => "content-container" }
       %div{ :id => "issues-table" }
         %div{ :id => "faux-th" }
-          %div{ :class => "col1" }
-            &nbsp&nbsp&nbspAre any of these your issue?
-          %div{ :class => "col2" }
-            %center
-              Date Added
-          %div{ :class => "col3" }
-            %center
-              Votes
-        - if @issues != nil
-          - @issues.each do |issue|
-            %a{ :href => "/issue/#{issue.id}?vote=true" }
-              %div{ :id => "faux-tr" }
-                %div{ :class => "col1" }= "   " + issue.name
-                %div{ :class => "col2" }
-                  %center= "Fake Date"
-                %div{ :class => "col3" }
-                  %center= "Fake #"
+          - if @issues != []
+            %div{ :class => "col1" }
+              &nbsp&nbsp&nbspAre any of these your issue?
+            %div{ :class => "col2" }
+              %center
+                Date Added
+            %div{ :class => "col3" }
+              %center
+                Votes
+            - @issues.each do |issue|
+              %a{ :href => "/issue/#{issue.id}?vote=true" }
+                %div{ :id => "faux-tr" }
+                  %div{ :class => "col1" }= "   " + issue.name
+                  %div{ :class => "col2" }
+                    %center= "Fake Date"
+                  %div{ :class => "col3" }
+                    %center= "Fake #"      
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
-          Want to create a new issue for
-          = params[:issue_name] + "?"
+          - if @issues == []
+            = "You're the first to have a trouble with " + params[:issue_name] + ". Please create a new issue!"
+          - else  
+            Want to create a new issue for
+            = params[:issue_name] + "?"
         %center
           =link_to "SUBMIT NEW ISSUE", "/specific_issue/" + params[:issue_name], :class => 'content-button'

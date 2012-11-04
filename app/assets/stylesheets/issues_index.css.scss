@@ -17,20 +17,19 @@
 #issues-table #faux-th{
   width: 100%;
   float: left;
-  padding-bottom: 1em;
 }
 
-#faux-th .col1 {
+#faux-th>.col1 {
   position:relative;
   padding: .25em 0em;
-  margin:1em 0 .5em;
+  margin:1em 0 1em;
   color:#FFF;
   background:#1F87E0;
   float: left;
   width: 55%;
 }
 
-#faux-th .col1:after {
+#faux-th>.col1:after {
    content: "";
    display: block;
    position: absolute;
@@ -42,10 +41,10 @@
    border-color: #1F87E0 transparent;
 }
 
-#faux-th .col2{
+#faux-th>.col2{
   position:relative;
   padding: .25em 0em;
-  margin:1em 0 .5em;
+  margin:1em 0 1em;
   color:#FFF;
   background:#1F87E0;
   float: left;
@@ -53,7 +52,7 @@
   margin-left: 5%;
 } 
 
-#faux-th .col2:after {
+#faux-th>.col2:after {
    content: "";
    display: block;
    position: absolute;
@@ -65,10 +64,10 @@
    border-color: #1F87E0 transparent;
 }
 
-#faux-th .col3{
+#faux-th>.col3{
   position:relative;
   padding: .25em 0em;
-  margin:1em 0 .5em;
+  margin:1em 0 1em;
   color:#FFF;
   background:#1F87E0;
   float: left;
@@ -76,7 +75,7 @@
   margin-left: 5%;
 } 
 
-#faux-th .col3:after {
+#faux-th>.col3:after {
    content: "";
    display: block;
    position: absolute;
@@ -88,7 +87,7 @@
    border-color: #1F87E0 transparent;
 }
 
-#issues-table #faux-tr{
+#faux-tr{
   color: #FFF;
   width: 100%;
   float: left;
@@ -108,19 +107,19 @@
   border: 1px solid #333;
 }
 
-#faux-tr .col1{
+#faux-tr>.col1{
   width: 55%;
   text-indent: 14px;
   float: left;
 } 
 
-#faux-tr .col2{
+#faux-tr>.col2{
   width: 20%;
   margin-left: 5%;
   float: left;
 } 
 
-#faux-tr .col3{
+#faux-tr>.col3{
   width: 15%;
   margin-left: 5%;
   float: left;
