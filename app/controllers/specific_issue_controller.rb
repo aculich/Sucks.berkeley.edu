@@ -4,7 +4,6 @@ class SpecificIssueController < ApplicationController
   end
 
   def show
-    debugger
     @issue_name = params[:issue_name]
 	i_want = params["want-text"]
 	so_that = params["so-text"]
