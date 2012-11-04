@@ -1,0 +1,40 @@
+%section 
+  %div{ :id => "center-container" }
+    %div{ :id => "content-container" }
+      %div{ :class => "dark-swiss-army-box"}
+        %p
+          %span
+            = "#{@issue_name} Sucks!"
+          %br
+          %br
+          As a student in Moffit 101
+          %br
+          So that I can access lecture notes
+          %br
+          I want to be able to get wireless access to Airbears
+          %br
+        %center
+          %div{ :class => "progress" }
+            %span{ :style => "width: 33%" }
+      %div{ :class => "swiss-army-box" }
+        %div{ :class => "content-title" }
+          Questions from the developer
+        %center
+          %br
+          %p
+            No developers have claimed this task yet...
+          =link_to "I AM A DEVELOPER", "", :class => 'content-button'
+          %p
+            (Feature coming soon)
+          %br
+      %div{ :class => "swiss-army-box" }
+        %div{ :class => "content-title" }
+          Discussion
+        %center
+          = form_tag({:url => "/"}, :id => "comments-form", :method => :get) do
+            // make this get for now so it doesn't generate error upon submission
+            //= text_field :put, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
+            = text_field :get, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
+          %p 
+            = "(Feature coming soon)"
+          %br
