@@ -1,11 +1,11 @@
-class EndUserIndexController < ApplicationControllers
+class EndUserIndexController < ApplicationController
 
   def index
   end
 
   def show
-    issue_name = params["what-text"]
-    issues = Issue.filter_by_name(:issue_name)
+    issue_name = params[:issue_name]
+    @issues = Issue.find_all_by_name(issue_name)
   end
   
 end

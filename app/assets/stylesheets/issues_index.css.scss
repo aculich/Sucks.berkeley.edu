@@ -1,12 +1,17 @@
-#issues-table {
+#content-container {
   margin: -3em auto;
   max-width: 50em;
   min-width: 20em;
   width: 75%;
-  padding: 0em 1em 3em 0em;
+}
+
+#issues-table {
+  width: 100%;
+  padding: 0em 0em 1em 0em;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.25em;
   color: #FFF;
+  float: left;
 }
 
 #issues-table #faux-th{
@@ -103,7 +108,7 @@
   border: 1px solid #333;
 }
 
-#issues-table #faux-tr .col1{
+#faux-tr .col1{
   width: 55%;
   text-indent: 14px;
   float: left;
@@ -119,5 +124,14 @@
   width: 15%;
   margin-left: 5%;
   float: left;
+}
+
+#faux-tr:hover:after{
+  position: absolute;
+  margin-left: .5em;
+  margin-top: .2em;
+  font-size: .8em;
+  color: #F7BE00;
+  content: "+1";
 }
 
