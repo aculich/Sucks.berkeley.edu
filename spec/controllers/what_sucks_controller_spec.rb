@@ -11,7 +11,7 @@ describe WhatSucksController do
       issue = Issue.create()
       new_id = issue.id + 1
       post :create, "what-text" => "asdf", :method => "put"
-      response.should redirect_to("/action/#{new_id}")
+      response.should redirect_to("/end_user_index/#{new_id}")
     end
   end
 
