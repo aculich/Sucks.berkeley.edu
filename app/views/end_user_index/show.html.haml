@@ -22,6 +22,7 @@
                   %center= "Fake #"
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
-          Want to create a new issue?
+          Want to create a new issue for
+          = params[:issue_name] + "?"
         %center
           =link_to "SUBMIT NEW ISSUE", "/specific_issue/" + params[:issue_name], :class => 'content-button'
