@@ -5,7 +5,10 @@
         %div{ :id => "faux-th" }
           - if @issues != []
             %div{ :class => "col1" }
-              &nbsp&nbsp&nbspAre any of these your issue?
+              - if @issues.size == 1
+                &nbsp&nbsp&nbspIs this your issue?
+              - else 
+                &nbsp&nbsp&nbspAre any of these your issue?
             %div{ :class => "col2" }
               %center
                 Date Added
@@ -17,9 +20,9 @@
                 %div{ :id => "faux-tr" }
                   %div{ :class => "col1" }= "   " + issue.name
                   %div{ :class => "col2" }
-                    %center= "Fake Date"
+                    %center= issue.date_entered.month.to_s + "/" + issue.date_entered.day.to_s + "/" + issue.date_entered.year.to_s
                   %div{ :class => "col3" }
-                    %center= "Fake #"      
+                    %center= issue.votes      
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           - if @issues == []
