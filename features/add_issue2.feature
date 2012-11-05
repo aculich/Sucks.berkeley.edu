@@ -18,6 +18,7 @@ Background: issues have been added to database
 # Page 1
 Scenario: see the correct information displayed on the front page
   Given I am on the Sucks.Berkeley.edu home page
+  Then I should see "Sucks!"
   Then I should see only a text box followed by the word "Sucks!"
 
 #Page 2
@@ -26,7 +27,7 @@ Scenario: enter an existing issue with multiple entries
   And I fill in the text box with "Airbears"
   And I click the submit arrow
   Then I should be on Page 2 for the issue "Airbears"
-  And I should see 'Airbears Sucks!' at the top of the page
+  And I should see "Airbears Sucks!"
   And I should see "Are any of these your issue?"
   And I should see "SUBMIT NEW ISSUE"
   
@@ -59,12 +60,12 @@ Scenario: enter a new issue
   Then I should be on Page 3 for the issue "Airbears"
 
 # Page 3
-Secnario: enter information
+Scenario: enter information
   Given I am on Page 3 for "Airbears" with the correct information displayed
-  And I fill in 'want-text' with "I want to be able to log in for a longer period of time"
-  And I fill in 'so-text' with "So that I don't have to log in every time I check my email"
+  And I fill in "want-text" with "I want to be able to log in for a longer period of time"
+  And I fill in "so-text" with "So that I don't have to log in every time I check my email"
   And I click the submit arrow
-  I should be on Page 4 for the issue "Airbears"
+  Then I should be on Page 4 for the issue "Airbears"
 
 # Page 4
 Scenario: visit issue information page

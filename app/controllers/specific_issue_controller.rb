@@ -19,7 +19,8 @@ class SpecificIssueController < ApplicationController
 	      issue_id = Issue.create!({"name"=>params["issue_name"], 
 					     "i_want"=>i_want, 
 					     "so_that"=>so_that, 
-					     "votes"=>0}).id
+					     "votes"=>0,
+					     "date_entered"=>Time.now}).id
 		    redirect_to "/issue_info/#{issue_id}"
       end
     end

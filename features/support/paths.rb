@@ -18,13 +18,13 @@ module NavigationHelpers
 	when /^the Sucks.Berkeley.edu home\s?page$/
 	  '/'
 	when /^Page 2 for the issue "(.*)"$/
-	  "/action/#{Issue.find_by_name($1).id}"
+    "/end_user_index/#{Issue.find_by_name($1).name}"
 	  
 	when /^Page 3 for the issue "(.*)"$/
-	  "/goal/#{Issue.find_by_name($1).id}"
+    "/specific_issue/#{Issue.find_by_name($1).name}"
 	  
 	when /^Page 4 for the issue "(.*)"$/
-	  "/identity/#{Issue.find_by_name($1).id}"
+    "/issue_info/#{Issue.find_by_name($1).id}"
 	  
 	when /^Page 5 for the issue "(.*)"$/
 	  "/summary/#{Issue.find_by_name($1).id}"

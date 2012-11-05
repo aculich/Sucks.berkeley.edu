@@ -26,6 +26,7 @@ group :production do
 end
 
 group :test, :development do
+  gem 'spork-rails'
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions 
   gem 'rspec-rails' 
   gem 'database_cleaner' # to clear Cucumber's test database between runs
@@ -36,7 +37,7 @@ group :test, :development do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'rspec-rails'
 end
 
