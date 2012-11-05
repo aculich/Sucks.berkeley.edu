@@ -5,10 +5,9 @@ class SpecificIssueController < ApplicationController
 
   def show
     @issue_name = params[:issue_name]
-	  i_want = params["want-text"]
-	  so_that = params["so-text"]
-	
 	  if request.post?
+      i_want = params["want-text"]
+	    so_that = params["so-text"]
 		  if i_want == "" or i_want == nil
 			  flash[:notice] = "Please tell us what you want!"
 			  redirect_to "/specific_issue/#{@issue_name}"
