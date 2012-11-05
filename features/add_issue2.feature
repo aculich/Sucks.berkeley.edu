@@ -18,8 +18,8 @@ Background: issues have been added to database
 # Page 1
 Scenario: see the correct information displayed on the front page
   Given I am on the Sucks.Berkeley.edu home page
-  Then I should see "Sucks!"
-  Then I should see only a text box followed by the word "Sucks!"
+  Then I should see "sucks!"
+  Then I should see only a text box followed by the word "sucks!"
 
 #Page 2
 Scenario: enter an existing issue with multiple entries
@@ -27,25 +27,24 @@ Scenario: enter an existing issue with multiple entries
   And I fill in the text box with "Airbears"
   And I click the submit arrow
   Then I should be on Page 2 for the issue "Airbears"
-  And I should see "Airbears Sucks!"
   And I should see "Are any of these your issue?"
   And I should see "SUBMIT NEW ISSUE"
+  And I should see "Want to create a new issue for Airbears?"
   
 Scenario: enter an existing issue with a single entry
   Given I am on the Sucks.Berkeley.edu home page
   And I fill in the text box with "CS169"
   And I click the submit arrow
   Then I should be on Page 2 for the issue "CS169"
-  And I should see 'CS169 Sucks!' at the top of the page
   And I should see "Is this your issue?"
   And I should see "SUBMIT NEW ISSUE"
+  And I should see "Want to create a new issue for CS169?"
   
 Scenario: enter an issue that does not exist
   Given I am on the Sucks.Berkeley.edu home page
   And I fill in the text box with "CS170"
   And I click the submit arrow
   Then I should be on Page 2 for the issue "CS170"
-  And I should see 'CS170 Sucks!' at the top of the page
   And I should see "You're the first to have trouble with CS170. Please create a new issue!"
   And I should see "SUBMIT NEW ISSUE"
 
