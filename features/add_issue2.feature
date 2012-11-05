@@ -55,16 +55,16 @@ Scenario: select an action from the list
  
 Scenario: enter a new issue
   Given I am on Page 2 for "Airbears" with the correct information displayed
-  And I press "ENTER A NEW ISSUE"
+  And I follow "SUBMIT NEW ISSUE"
   Then I should be on Page 3 for the issue "Airbears"
 
 # Page 3
 Scenario: enter information
-  Given I am on Page 3 for "Airbears" with the correct information displayed
+  Given I am on Page 3 for "UniqueAirbears" with the correct information displayed
   And I fill in "want-text" with "I want to be able to log in for a longer period of time"
   And I fill in "so-text" with "So that I don't have to log in every time I check my email"
   And I click the submit arrow
-  Then I should be on Page 4 for the issue "Airbears"
+  Then I should be on Page 4 for the issue "UniqueAirbears"
 
 # Page 4
 Scenario: visit issue information page

@@ -18,10 +18,10 @@ module NavigationHelpers
 	when /^the Sucks.Berkeley.edu home\s?page$/
 	  '/'
 	when /^Page 2 for the issue "(.*)"$/
-    "/end_user_index/#{Issue.find_by_name($1).name}"
+    "/end_user_index/#{$1}"
 	  
 	when /^Page 3 for the issue "(.*)"$/
-    "/specific_issue/#{Issue.find_by_name($1).name}"
+    "/specific_issue/#{$1}"
 	  
 	when /^Page 4 for the issue "(.*)"$/
     "/issue_info/#{Issue.find_by_name($1).id}"
