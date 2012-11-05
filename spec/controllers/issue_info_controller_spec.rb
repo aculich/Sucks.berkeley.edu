@@ -5,8 +5,20 @@ describe IssueInfoController do
     it "should contain issue details" do
       issue = Issue.create()
       issue.name = "Airbears"
+      Issue.should_receive(:find_by_id).with(issue.id.to_s).and_return(issue)
       get :show, :issue_id => issue.id
-      assigns(:issue).should == issue
+      assigns(:issue_name).should == "Airbears"
+    end
+  end
+
+  describe "Arriving on issue info page with vote parameter" do
+    it "should increase the vote by one" do
+      issue = Issue.create()
+      issue.name = "Airbears"
+      issue.votes = 0
+      Issue.should_receive(:find_by_id).with(issue.id.to_s).and_return(issue)
+      get :show, :issue_id => issue.id, :vote => "true"
+      issue.votes.should == 1
     end
   end
 
