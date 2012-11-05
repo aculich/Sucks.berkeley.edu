@@ -5,7 +5,7 @@ class IssueInfoController < ApplicationController
 
   def show
     @issue = Issue.find_by_id(params[:issue_id])
-    @issue_name = Issue.find_by_id(params[:issue_id]).name
+    @issue_name = @issue.name
 	if params["vote"] == "true"
 		@issue.votes += 1
 		@issue.save!
