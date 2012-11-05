@@ -1,3 +1,4 @@
+=begin
 require "spec_helper"
 
 describe IdentityController do
@@ -26,3 +27,4 @@ describe IdentityController do
     end
   end
 end
+=end
