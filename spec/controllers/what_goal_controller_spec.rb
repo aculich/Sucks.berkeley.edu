@@ -1,3 +1,4 @@
+=begin
 require "spec_helper"
 
 describe WhatGoalController do
@@ -23,3 +24,4 @@ describe WhatGoalController do
     end
   end
 end
+=end

@@ -1,3 +1,4 @@
+=begin
 require "spec_helper"
 
 describe WhatActionController do
@@ -22,3 +23,4 @@ describe WhatActionController do
     end
   end
 end
+=end
