@@ -1,20 +1,26 @@
 %section
   %div{ :id => "center-container" }
-    %div{ :id => "issues-table" }
-      %div{ :id => "faux-th" }
-        %div{ :class => "col1" }
-          &nbsp&nbsp&nbspWhat Sucks?
-        %div{ :class => "col2" }
-          %center
-            Date Added
-        %div{ :class => "col3" }
-          %center
-            Votes
-      - @issues.each do |issue|
-        %a{ :href => "/summary/#{issue.id}" }
-          %div{ :id => "faux-tr" }
-            %div{ :class => "col1" }= "   " + issue.name
+    %div{ :id => "content-container" }
+      %div{ :id => "issues-table" }
+        %div{ :id => "faux-th" }
+          - if @issues != []
+            %div{ :class => "col1" }
+              &nbsp&nbsp&nbspIssues
             %div{ :class => "col2" }
-              %center= "Fake Date"
+              %center
+                Date Added
             %div{ :class => "col3" }
-              %center= "Fake #"
+              %center
+                Votes
+            - @issues.each do |issue|
+              %a{ :href => "/issue_info/#{issue.id}" }
+                %div{ :id => "issue-tr" }
+                  %div{ :class => "col1" } 
+                    - if issue.as_a == nil
+                      %div= "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}"
+                    - else
+                      %div= "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}"
+                  %div{ :class => "col2" }
+                    %center= issue.date_entered.month.to_s + "/" + issue.date_entered.day.to_s + "/" + issue.date_entered.year.to_s
+                  %div{ :class => "col3" }
+                    %center= issue.votes      

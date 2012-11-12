@@ -1,7 +1,5 @@
-=begin
 class IssuesController < ApplicationController
   def index
-    @issues = Issue.all
+    @issues = Issue.all(:order => "votes DESC")
   end
 end
-=end
