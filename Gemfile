@@ -45,6 +45,8 @@ gem 'simplecov'
 
 gem 'uservoice-ruby'
 
+gem 'pivotal-tracker'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
