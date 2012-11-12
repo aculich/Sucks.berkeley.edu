@@ -6,9 +6,9 @@
           - if @issues != []
             %div{ :class => "col1" }
               - if @issues.size == 1
-                &nbsp&nbsp&nbspIs this your issue?
+                &nbsp&nbsp&nbsp#{@issue_name} sucks! Is this your issue?
               - else 
-                &nbsp&nbsp&nbspAre any of these your issue?
+                &nbsp&nbsp&nbsp#{@issue_name} sucks! Are any of these your issue?
             %div{ :class => "col2" }
               %center
                 Date Added
@@ -18,8 +18,12 @@
             - @issues.each do |issue|
               %a{ :href => "/issue_info/#{issue.id}?vote=true" }
                 %div{ :id => "faux-tr" }
-                  %div{ :class => "col1" }= "   " + issue.name
-                  %div{ :class => "col2" }
+                  %div{ :class => "col1" } 
+                    - if issue.as_a == nil
+                      %div= "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}"
+                    - else
+                      %div= "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}"
+                  %div{ :class => "col2" }                  
                     %center= issue.date_entered.month.to_s + "/" + issue.date_entered.day.to_s + "/" + issue.date_entered.year.to_s
                   %div{ :class => "col3" }
                     %center= issue.votes      
