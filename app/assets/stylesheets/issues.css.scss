@@ -109,9 +109,13 @@
 
 #faux-tr>.col1{
   width: 55%;
-  text-indent: 14px;
   float: left;
+  font-size: .8em;
 } 
+
+.col1> div{
+  margin-left: .5em;
+}
 
 #faux-tr>.col2{
   width: 20%;

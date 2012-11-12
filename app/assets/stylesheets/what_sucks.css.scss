@@ -31,6 +31,14 @@ header a span{
   width: 100%;
 }
 
+#center-container a {
+  color: #FFF;
+}
+
+#center-container a:hover {
+  color: #5EADE2;
+}
+
 #main-box {
   background-color: #FFF;
   -webkit-box-shadow: 0em 0em .5em .05em #333;
