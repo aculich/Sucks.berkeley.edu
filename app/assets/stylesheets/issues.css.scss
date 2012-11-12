@@ -138,6 +138,43 @@
   content: "+1";
 }
 
+#issue-tr{
+  color: #FFF;
+  width: 100%;
+  float: left;
+  padding: .8em 0em;
+  background-color: #324f63;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px #333; 
+  -moz-box-shadow: inset 0 0 5px #333; 
+  -webkit-box-shadow: inset 0 0 5px #333;
+  margin-bottom: .5em;
+}
+
+#issues-table #issue-tr:hover{
+  background-color: #1F87E0;
+  border: 1px solid #333;
+}
+
+#issue-tr>.col1{
+  width: 55%;
+  float: left;
+  font-size: .8em;
+} 
+
+#issue-tr>.col2{
+  width: 20%;
+  margin-left: 5%;
+  float: left;
+} 
+
+#issue-tr>.col3{
+  width: 15%;
+  margin-left: 5%;
+  float: left;
+}
 
 .dark-swiss-army-box {
   margin: 0 auto 1em;
