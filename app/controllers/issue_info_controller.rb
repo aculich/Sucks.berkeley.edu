@@ -10,6 +10,10 @@ class IssueInfoController < ApplicationController
 		@issue.votes += 1
 		@issue.save!
 	end
+    if request.post?
+      RequestMailer.send_request(params[:name], params[:email], params[:pid], params[:issue_id]).deliver
+      @notice = "Your request has been sent"
+    end
     #@comment = Issue.comment.where(:issue_name => @issue_name)
   end
 

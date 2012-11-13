@@ -1,0 +1,76 @@
+#overlay {
+  background-color: #000;
+  opacity: .5;
+  position: absolute;
+  z-index: 3;
+}
+
+#request-popup {
+  color: #666; 
+  display: none;   
+  position: absolute; 
+  background: #FFF;  
+  z-index: 4;  
+  width: 40%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-top: #F7BE00 solid 1em;
+  -webkit-box-shadow: 0em 0em .5em .05em #333;
+  -moz-box-shadow: 0em 0em .5em .05em #333;
+  box-shadow: 0em 0em .5em .05em #333;
+}
+
+#close-popup {
+  position: relative;
+  float: right;
+  margin-top: -1.3em;
+  height: 1em;
+  width: 1em;
+  color: #FFF;
+  font-size: 1em;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+#close-popup:hover {
+  cursor: pointer;
+}
+
+#dev-request-form {
+  padding: 1em;
+  width: 90%;
+}
+
+#dev-request-form input {
+  width: 80%;
+  height: 1.5em;
+  border-width: 1px;
+  border-color: #CCC;
+  background-color: #EFEFEF;
+  padding: .3em;
+}
+
+#dev-request-form input:focus {
+  outline: none;
+}
+
+#dev-request-form input[type='submit']{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #1F87E0;
+  color: #FFF;
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: .225em .725em 1.725em .725em;
+  border: 0 none;
+  display: inline-block;
+  font-size: .8em;
+  text-decoration: none;
+  width: auto;
+  margin: 0;
+}
+
+#dev-request-form input[type='submit']:hover{
+  background-color: #33BEF5;
+  cursor: pointer;
+}

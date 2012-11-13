@@ -63,6 +63,8 @@ match 'end_user_index/:issue_name' => 'end_user_index#show'
 match 'issue_info/:issue_id' => 'issue_info#show'
 match 'specific_issue/:issue_name' => 'specific_issue#show'
 
+match 'prototype' => 'prototype#index'
+
   resources :issues
   
 

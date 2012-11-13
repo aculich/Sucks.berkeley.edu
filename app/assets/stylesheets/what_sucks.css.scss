@@ -5,12 +5,16 @@ body {
   height: 100%
 }
 
+h2 {
+  font-size: 1em;
+}
+
 header {
   background-color: #FFF;
   padding: .3125em .625em;
   width: 100%;
   position: fixed;
-  z-index: 5;
+  z-index: 2;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5em;
 }
@@ -24,19 +28,19 @@ header a span{
   color: #F7BE00;
 }
 
+#issues-index {
+  color: #FFF;
+}
+
+#issues-index:hover {
+  color: #38A8E7;
+}
+
 #center-container {
   position: absolute; 
   top: 25%;
   left: 0;
   width: 100%;
-}
-
-a#issues-index{
-  color: #FFF;
-}
-
-a#issues-index:hover {
-  color: #5EADE2;
 }
 
 #main-box {
@@ -276,5 +280,28 @@ a#issues-index:hover {
 #user-story-form input[type='submit']:hover{
   background-color: #33BEF5;
   cursor: pointer;
+}
+
+.notice-swiss-army-box {
+  margin: 0 auto 1em;
+  width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #FFF;
+  background-color: #813731;
+  float: left;
+  box-shadow: inset 0 0 5px #333; 
+  -moz-box-shadow: inset 0 0 5px #333; 
+  -webkit-box-shadow: inset 0 0 5px #333;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.notice-swiss-army-box span{
+  font-size: 1.25em;
+}
+
+.notice-swiss-army-box p {
+  padding: .2em .2em;
 }
 
