@@ -17,6 +17,7 @@
 
 # Ignore Emacs *~ backup files
 *~
+*.swp
 
 # Ignore all of the coverage files
 /coverage/*
