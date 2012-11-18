@@ -1,6 +1,10 @@
 %section 
   %div{ :id => "center-container" }
     %div{ :id => "content-container" }
+      - if @notice != nil
+        %div{ :class => "notice-swiss-army-box"}
+          %center
+            %p= @notice
       %div{ :class => "dark-swiss-army-box"}
         %p
           %span
@@ -31,7 +35,7 @@
           %br
           %p
             No developers have claimed this task yet...
-          =link_to "I AM A DEVELOPER", "", :class => 'content-button'
+          =link_to "I AM A DEVELOPER", "#", :class => 'content-button', :id => 'dev-request'
           %p
             (Feature coming soon)
           %br
@@ -46,3 +50,21 @@
           %p 
             = "(Feature coming soon)"
           %br
+  %div{ :id => "request-popup" }
+    %div{ :id => "close-popup" }
+      x
+    %center
+      %h2
+        Request Pivotal Tracker Access
+        = form_tag({}, :id => "dev-request-form") do
+          = text_field :put, :name, :name => 'name', :placeholder => 'Name'
+          %br
+          %br
+          = text_field :put, :email, :name => 'email', :placeholder => 'Email'
+          %br
+          %br
+          = text_field :put, :pid, :name => 'pid', :placeholder => 'Pivotal Tracker Id'
+          %br
+          %br
+          = submit_tag "REQUEST", :id => 'submit_arrow'
+  %div{ :id => "overlay" }
