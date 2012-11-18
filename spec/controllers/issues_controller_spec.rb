@@ -7,7 +7,7 @@ describe IssuesController do
   end
 
   describe 'sort issues' do
-    it "should be able to call model method to sort issues"
+    it "should be able to call model method to sort issues" do
     end
   end
 end
