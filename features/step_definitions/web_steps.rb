@@ -224,6 +224,16 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
   end
 end
 
+Then /^(?:|I )should be in the page for the issue "(.+)"$/ do |issue_name|
+  current_path = URI.parse(current_url).path
+  issues = Issue.find_all_by_name(issue_name)
+  issue_ids = []
+  issues.each do |issue|
+    issue_ids.append(issue.id)
+  end
+  assert issue_ids.should include Integer(current_path[-1])
+end
+
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
