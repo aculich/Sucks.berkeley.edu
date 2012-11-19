@@ -12,8 +12,11 @@ Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
   assert(find(:css,"#main-box>form>label").text == arg1)
 end
 
-#Then /^I should see a text box for Name, Email, and Pivotal Account$/ do 
-#  assert(find(:css,"#main-box>form>label").
+Then /^I should see a text box for Name, Email, and Pivotal Account$/ do 
+  assert(find(:css,"input#put_name").text == "")
+  assert(find(:css,"input#put_email").text == "")
+  assert(find(:css,"input#put_pid").text == "")
+end
 
 And /^I fill in Name with "([^"]*)" and Email with "([^']*)", "([^']*)"$/ do |name, email, pivotal|
   fill_in("name", :with=>name)
@@ -31,6 +34,14 @@ Given /^I click the submit arrow$/ do
 end
 
 Then /^I should see '([^']*)' at the top of the page$/ do |text|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
+
+Then /^I should see '([^']*)'$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else
