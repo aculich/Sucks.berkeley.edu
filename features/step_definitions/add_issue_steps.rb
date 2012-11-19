@@ -24,6 +24,15 @@ And /^I fill in Name with "([^"]*)" and Email with "([^']*)", "([^']*)"$/ do |na
   fill_in("pid", :with=>pivotal)
 end
 
+Then /^I fill in Name with (.+) and Email with (.*) and Account with (.*)$/ do |name, email, account|
+  fill_in("name", :with=>name)
+  fill_in("email", :with=>email)
+  fill_in("pid", :with=>account)
+end
+
+Then /^I press Request$/ do
+  click_button("submit_arrow")
+end
 
 When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
   fill_in("what-text", :with => value)
