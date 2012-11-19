@@ -51,7 +51,7 @@ Scenario: enter an issue that does not exist
 Scenario: select an action from the list
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
   And I follow "I can go on the internet"
-  Then I should be in the page for "Airbears"
+  Then I should be in the page for the issue "Airbears"
  
 Scenario: enter a new issue
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
