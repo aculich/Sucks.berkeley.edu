@@ -4,6 +4,7 @@ class WhatSucksController < ApplicationController
 
   def create
     issue_name = params["what-text"]
+    Uservoice_ticket.poll_uservoice
     if issue_name == "" or issue_name == nil
       flash[:notice] = "Please enter 1-2 words about what sucks!"
       redirect_to "/" and return
