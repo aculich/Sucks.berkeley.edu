@@ -92,7 +92,15 @@ And /^the issue "(.*)" should have (.+) votes$/ do |issue_name, num_votes|
   assert issue_votes.should include Integer(num_votes)
 end
 
+And /^the issue "(.*)" should have (.+) vote$/ do |issue_name, num_votes|
+  issues = Issue.find_all_by_name(issue_name)
+  issue_votes = []
+  issues.each do |issue|
+    issue_votes.append(issue.votes)
+  end
+  assert issue_votes.should include Integer(num_votes)
+end
+
 Then /^I click on the issue "(.*)"$/ do |issue_name|
   click_link(issue_name)
-#BROWSER.link(:text, issue_name).click
 end
