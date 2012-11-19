@@ -39,7 +39,6 @@ module NavigationHelpers
 
     when /^the Issue Info Page for (.*)$/
       issue = Issue.find_by_so_that($1)
-      debugger
       "/issue_info/#{issue.id}"
 
 
