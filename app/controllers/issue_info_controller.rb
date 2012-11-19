@@ -7,8 +7,7 @@ class IssueInfoController < ApplicationController
     @issue = Issue.find_by_id(params[:issue_id])
     @issue_name = @issue.name
 	  if params["vote"] == "true"
-		  @issue.votes += 1
-      if @issue.votes == 3
+		@issue.votes += 1
         Project.add_issue_to_pivotal(@issue)          
       end     
 		  @issue.save!
