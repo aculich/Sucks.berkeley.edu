@@ -15,25 +15,32 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-	when /^the Sucks.Berkeley.edu home\s?page$/
-	  '/'
-	when /^Page 2 for the issue "(.*)"$/
-    "/end_user_index/#{$1}"
-	  
-	when /^Page 3 for the issue "(.*)"$/
-    "/specific_issue/#{$1}"
-	  
-	when /^Page 4 for the issue "(.*)"$/
-    "/issue_info/#{Issue.find_by_name($1).id}"
-	  
-	when /^Page 5 for the issue "(.*)"$/
-	  "/summary/#{Issue.find_by_name($1).id}"
+    when /^the Sucks.Berkeley.edu home\s?page$/
+      '/'
+    when /^Page 2 for the issue "(.*)"$/
+      "/end_user_index/#{$1}"
+  
+    when /^Page 3 for the issue "(.*)"$/
+      "/specific_issue/#{$1}"
+      
+    when /^Page 4 for the issue "(.*)"$/
+      "/issue_info/#{Issue.find_by_name($1).id}"
+      
+    when /^Page 5 for the issue "(.*)"$/
+      "/summary/#{Issue.find_by_name($1).id}"
 
-  when /^the End User Index Page for (.*)$/
-    "/end_user_index/#{$1}"
+    when /^the End User Index Page for (.*)$/
+      issue_name = $1
+      if $1.include?(" ") 
+        issue_name = $1.split(" ")
+        issue_name = issue_name[0] + "%20" + issue_name[1]
+      end
+      "/end_user_index/#{issue_name}"
 
-  when /^the Specific Issue Page for (.*)$/
-    "/specific_issue/#{$1}"
+    when /^the Issue Info Page for (.*)$/
+      "/issue_info/#{Issue.find_by_name($1).id}"
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
