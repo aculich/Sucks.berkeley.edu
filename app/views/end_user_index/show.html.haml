@@ -6,9 +6,9 @@
           - if @issues != []
             %div{ :class => "col1" }
               - if @issues.size == 1
-                &nbsp&nbsp&nbsp#{@issue_name} sucks! Is this your issue?
+                %div= "#{@issue_name} sucks! Is this your issue?"
               - else 
-                &nbsp&nbsp&nbsp#{@issue_name} sucks! Are any of these your issue?
+                %div= "#{@issue_name} sucks! Are any of these your issue?"
             %div{ :class => "col2" }
               %center
                 Date Added
@@ -26,7 +26,16 @@
                   %div{ :class => "col2" }                  
                     %center= issue.date_entered.month.to_s + "/" + issue.date_entered.day.to_s + "/" + issue.date_entered.year.to_s
                   %div{ :class => "col3" }
-                    %center= issue.votes      
+                    %center= issue.votes
+        %div{ :id => "faux-th-100" }
+          - if @uservoice_tickets!= []
+            %div{ :class => "col1" }
+              &nbsp&nbsp&nbspHelp contribute to existing user issues
+            - @uservoice_tickets.each do |ticket|
+              %a{ :href => ticket.url }
+                %div{ :id => "faux-tr-100" }
+                  %div{ :class => "col1" }
+                    %div= "#{ticket.subject}"        
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           - if @issues == []
