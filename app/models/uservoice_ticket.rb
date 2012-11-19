@@ -5,7 +5,7 @@ class Uservoice_ticket < ActiveRecord::Base
   attr_accessible :body, :subject,:ticket_number, :uservoice_id, :url, :uservoice_auther_karma
 
   def self.poll_uservoice
-    client = UserVoice::Client.new('google5', 'NsOgv6KCGyHQaOhSghlow', '88OahJ68hkjHpcIYncmqgEAW88RszQMjT4zQmtng', :callback => 'http://localhost:3000/')
+    client = UserVoice::Client.new(GlobalConstants::UV_SUBDOMAIN, GlobalConstants::UV_API_KEY, GlobalConstants::UV_API_SECRET, :callback => GlobalConstants::CALLBACK_URL)
     client.login_as_owner do |owner|
       response = owner.get_collection("/api/v1/tickets.json")
       response.each do |ticket|
