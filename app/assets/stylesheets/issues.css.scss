@@ -19,6 +19,11 @@
   float: left;
 }
 
+#issues-table #faux-th-100{
+  width: 100%;
+  float: left;
+}
+
 #faux-th>.col1 {
   position:relative;
   padding: .25em 0em;
@@ -29,7 +34,29 @@
   width: 55%;
 }
 
+#faux-th-100>.col1 {
+  position:relative;
+  padding: .25em 0em;
+  margin:1em 0 1em;
+  color:#FFF;
+  background:#1F87E0;
+  float: left;
+  width: 100%;
+}
+
 #faux-th>.col1:after {
+   content: "";
+   display: block;
+   position: absolute;
+   bottom: -10px;
+   left: 50px;
+   width: 0;
+   border-width: 10px 10px 0;
+   border-style: solid;
+   border-color: #1F87E0 transparent;
+}
+
+#faux-th-100>.col1:after {
    content: "";
    display: block;
    position: absolute;
@@ -102,13 +129,39 @@
   margin-bottom: .5em;
 }
 
+#faux-tr-100{
+  color: #FFF;
+  width: 100%;
+  float: left;
+  padding: .8em 0em;
+  background-color: #324f63;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px #333; 
+  -moz-box-shadow: inset 0 0 5px #333; 
+  -webkit-box-shadow: inset 0 0 5px #333;
+  margin-bottom: .5em;
+}
+
 #issues-table #faux-tr:hover{
+  background-color: #1F87E0;
+  border: 1px solid #333;
+}
+
+#issues-table #faux-tr-100:hover{
   background-color: #1F87E0;
   border: 1px solid #333;
 }
 
 #faux-tr>.col1{
   width: 55%;
+  float: left;
+  font-size: .8em;
+} 
+
+#faux-tr-100>.col1{
+  width: 100%;
   float: left;
   font-size: .8em;
 } 
