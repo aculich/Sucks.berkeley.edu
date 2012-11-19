@@ -14,4 +14,6 @@
             = text_field :put, :so_text, :name => 'so-text'
             %br
             %br
+            - if @uservoice_url != nil
+              = hidden_field_tag "uservoice_url", @uservoice_url
             = submit_tag "SUBMIT", :id => 'submit_arrow'
