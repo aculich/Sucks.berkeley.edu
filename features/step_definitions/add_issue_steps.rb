@@ -12,16 +12,6 @@ Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
   assert(find(:css,"#main-box>form>label").text == arg1)
 end
 
-#Then /^I should see a text box for Name, Email, and Pivotal Account$/ do 
-#  assert(find(:css,"#main-box>form>label").
-
-And /^I fill in Name with "([^"]*)" and Email with "([^']*)", "([^']*)"$/ do |name, email, pivotal|
-  fill_in("name", :with=>name)
-  fill_in("email", :with=>email)
-  fill_in("pid", :with=>pivotal)
-end
-
-
 When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
   fill_in("what-text", :with => value)
 end
@@ -114,3 +104,4 @@ end
 Then /^I click on the issue "(.*)"$/ do |issue_name|
   click_link(issue_name)
 end
+
