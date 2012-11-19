@@ -1,6 +1,5 @@
 require 'uservoice-ruby'
 require 'json'
-require 'mechanize'
 
 class Uservoice_ticket < ActiveRecord::Base
   attr_accessible :body, :subject,:ticket_number, :uservoice_id, :url, :uservoice_auther_karma

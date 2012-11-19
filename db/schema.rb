@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112225730) do
+ActiveRecord::Schema.define(:version => 20121118220605) do
 
   create_table "comments", :force => true do |t|
     t.string   "issue_name"
@@ -31,15 +31,23 @@ ActiveRecord::Schema.define(:version => 20121112225730) do
     t.string   "as_a"
     t.string   "so_that"
     t.string   "i_want"
+    t.integer  "project_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "projects", :force => true do |t|
+    t.string  "name"
+    t.integer "pivotal_tracker_id"
+  end
+
   create_table "uservoice_tickets", :force => true do |t|
-    t.string   "body"
-    t.string   "subject"
-    t.datetime "uservoice_id"
-    t.string   "uservoice_auther_karma"
+    t.string "body"
+    t.string "subject"
+    t.string "uservoice_id"
+    t.string "uservoice_auther_karma"
+    t.string "ticket_number"
+    t.string "url"
   end
 
 end
