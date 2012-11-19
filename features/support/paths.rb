@@ -38,7 +38,9 @@ module NavigationHelpers
       "/end_user_index/#{issue_name}"
 
     when /^the Issue Info Page for (.*)$/
-      "/issue_info/#{Issue.find_by_name($1).id}"
+      issue = Issue.find_by_so_that($1)
+      debugger
+      "/issue_info/#{issue.id}"
 
 
     # Add more mappings here.

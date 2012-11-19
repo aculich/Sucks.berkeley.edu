@@ -23,17 +23,17 @@ Scenario: Add issues to Pivotal Tracker when the issue hits 3 upvotes
   Then I should see "Airbears"
   And the issue "Airbears" should have 3 votes
   Then I click on the issue "I can go on the internet"
-  And I should be on the Issue Info Page for Airbears
+  And I should be on the Issue Info Page for I can go on the internet
   
 Scenario: Don't add issues to Pivotal Tracker when the issue is less than 3 votes
   Given I am on the End User Index Page for Kevin Yao
   Then I should see "Kevin Yao"
   And the issue "Kevin Yao" should have 1 vote
   Then I click on the issue "I can pass the class"
-  And I should be on the Issue Info Page for Kevin Yao
+  And I should be on the Issue Info Page for I can pass the class
   
 Scenario: Don't re-add issues to Pivotal Tracker when the issue already had more than 3 votes
   Given I am on the End User Index Page for Perimeter Buses
   And the issue "Perimeter Buses" should have 9 votes
   Then I click on the issue "I can get to class on time"
-  And I should be on the Issue Info Page for Perimeter Buses
+  And I should be on the Issue Info Page for I can get to class on time
