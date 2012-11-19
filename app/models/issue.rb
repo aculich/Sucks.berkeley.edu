@@ -18,17 +18,17 @@ class Issue < ActiveRecord::Base
     return symbolized_hash
   end
   
-  SUBDOMAIN_NAME = "berkeley"
-  API_KEY = "II3Kwdje04R7QHpYjsD3g"
-  API_SECRET = "d3MgWsy1HUw1XTt7zcjPD3xebJK8MIaI6yC9xJEGbm0"
+  SUBDOMAIN_NAME = "google5"
+  API_KEY = "NsOgv6KCGyHQaOhSghlow"
+  API_SECRET = "88OahJ68hkjHpcIYncmqgEAW88RszQMjT4zQmtng"
   URL = "http://localhost:3000/"
-  SITE = "http://berkeley.uservoice.com"
+  SITE = "http://google5.uservoice.com"
   client = UserVoice::Client.new(SUBDOMAIN_NAME, API_KEY, API_SECRET, :callback => URL)
   
-  suggestions = client.get("#{SITE}/api/v1/forums/1/suggestions.json")
-  debugger
+  #suggestions = client.get("#{SITE}/api/v1/forums/1/suggestions.json")
 
   client.login_as_owner do |owner|
+    debugger
     response = owner.get("#{SITE}/api/v1/tickets.json")
   end
 '''
