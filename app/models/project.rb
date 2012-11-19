@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   attr_accessible :name, :pivotal_tracker_id
 
   def self.create_pivotal_project(name)
-    PivotalTracker::Client.token = "e78db5b6127c5d5529d236c464f295b3"
+    PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
     already_in_pt = (PivotalTracker::Project.all.map{|x| x.name}).include?(name)
     if(!already_in_pt)
       new_project = PivotalTracker::Client.connection["/projects"].post("<project><name>#{name}</name><iteration_length type=\"integer\">2</iteration_length><point_scale>0,1,3,9,27</point_scale></project>", :content_type => 'application/xml')
@@ -15,7 +15,7 @@ class Project < ActiveRecord::Base
   end
 
   def self.add_issue_to_pivotal(issue)
-    PivotalTracker::Client.token = "e78db5b6127c5d5529d236c464f295b3"
+    PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
     proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
     if issue.as_a == nil
       proj.stories.create(:name => "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
