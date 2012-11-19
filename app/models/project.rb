@@ -1,0 +1,36 @@
+class Project < ActiveRecord::Base
+  has_many :issues
+  attr_accessible :name, :pivotal_tracker_id
+
+  def self.create_pivotal_project(name)
+    PivotalTracker::Client.token = "e78db5b6127c5d5529d236c464f295b3"
+    already_in_pt = (PivotalTracker::Project.all.map{|x| x.name}).include?(name)
+    if(!already_in_pt)
+      new_project = PivotalTracker::Client.connection["/projects"].post("<project><name>#{name}</name><iteration_length type=\"integer\">2</iteration_length><point_scale>0,1,3,9,27</point_scale></project>", :content_type => 'application/xml')
+      pid = PivotalTracker::Project.parse(new_project).id
+    else
+      pid = PivotalTracker::Project.all.select {|x| x.name == name}[0].id
+    end
+    Project.create!(:name => name, :pivotal_tracker_id => pid)
+  end
+
+  def list_all_pivotal_projects
+    puts "fkdsljfs"
+    return @projects
+  end
+
+  def list_all_pivotal_stories
+    # We can do this through pivotal tracker or through our own Issues model
+
+    # Through Pivotal Tracker
+#    PivotalTracker::Client.token = 4128a56376113456f78fe5ce502cd0f6
+#    @projects = PivotalTracker::Project.all
+#    @a_project = PivotalTracker::Project.find(:pivotal_tracker_id)
+#    return @a_project.stories.all()
+
+    # Through our db
+    stories = PivotalTracker::Project.find(self.pivotal_tracker_id).stories.all
+    return stories
+  end
+
+end

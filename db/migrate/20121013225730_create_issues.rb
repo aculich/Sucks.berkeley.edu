@@ -9,6 +9,7 @@ class CreateIssues < ActiveRecord::Migration
 	  t.string :as_a
 	  t.string :so_that
 	  t.string :i_want
+      t.integer :project_id
 #      t.string :goal
 #      t.text :identity_tags
 #      t.datetime :date_entered
