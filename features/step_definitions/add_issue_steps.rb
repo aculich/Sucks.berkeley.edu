@@ -84,3 +84,11 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
+And /^the issue "(.*)" should have (.+) votes$/ do |issue_name, num_votes|
+  issues = Issue.find_all_by_name(issue_name)
+  issue_votes = []
+  issues.each do |issue|
+    issue_votes.append(issue.votes)
+  end
+  assert issue_votes.should include Integer(num_votes)
+end
