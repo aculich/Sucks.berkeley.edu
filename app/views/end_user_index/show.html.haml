@@ -32,7 +32,7 @@
             %div{ :class => "col1" }
               &nbsp&nbsp&nbspHelp contribute to existing user issues
             - @uservoice_tickets.each do |ticket|
-              %a{ :href => ticket.url }
+              %a{ :href => "/specific_issue/#{ticket.subject}?uservoice_url=#{ticket.url}" }
                 %div{ :id => "faux-tr-100" }
                   %div{ :class => "col1" }
                     %div= "#{ticket.subject}"        
