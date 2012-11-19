@@ -6,7 +6,6 @@ class EndUserIndexController < ApplicationController
   def show
     @issue_name = params[:issue_name]
     @issues = Issue.find_all_by_name(@issue_name)
-    #@comment = @issues.comment.where(:issue_name => @issue_name)
   end
   
 end
