@@ -25,14 +25,14 @@ Scenario: Pulling issues from UserVoice
   And I click the submit arrow
   Then I should be on the End User Index Page for Airbears
   Then I should see "Airbears"
-  And I should see a list of stories that link back to UserVoice
+#  And I should see a list of stories that link back to UserVoice
 
-Scenario: Check to see issues from UserVoice are below PivotalTracker
-  Given I am on the End User Index Page for Airbears
-  Then I should see a list of issues that link back to UserVoice
-  And these issues should be below the issues from PivotalTracker
+#Scenario: Check to see issues from UserVoice are below PivotalTracker
+#  Given I am on the End User Index Page for Airbears
+#  Then I should see a list of issues that link back to UserVoice
+#  And these issues should be below the issues from PivotalTracker
   
-Scenario: Check to see the subject and body information displayed
-  Given I am on the End User Index Page for Airbears
-  Then I should see a list of issues that link back to UserVoice
-  Then I should see the subject and body information from UserVoice displayed
+#Scenario: Check to see the subject and body information displayed
+#  Given I am on the End User Index Page for Airbears
+#  Then I should see a list of issues that link back to UserVoice
+#  Then I should see the subject and body information from UserVoice displayed

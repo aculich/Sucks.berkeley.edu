@@ -20,6 +20,16 @@ describe IssueInfoController do
       get :show, :issue_id => issue.id, :vote => "true"
       issue.votes.should == 1
     end
+
+    it "should call add pivotal story" do
+      issue = Issue.create()
+      issue.name = "Airbears"
+      issue.votes = 2
+      Issue.should_receive(:find_by_id).with(issue.id.to_s).and_return(issue)
+      Project.should_receive(:add_issue_to_pivotal)
+      get :show, :issue_id => issue.id, :vote => "true"
+      issue.votes.should == 3
+    end
   end
 
   describe "Clicking on the submit question button" do

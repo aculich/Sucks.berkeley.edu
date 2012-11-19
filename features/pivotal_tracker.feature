@@ -25,12 +25,12 @@ Scenario: Check stories to Pivotal Tracker
   And I click the submit arrow
   Then I should be on the End User Index Page for Airbears
   Then I should see "Airbears"
-  And I should see a list of stories from Pivotal Tracker
+#  And I should see a list of stories from Pivotal Tracker
   
 Scenario: Check to see issues from PivotalTracker are above UserVoice
   Given I am on the End User Index Page for Airbears
-  And I should see a list of stories from Pivotal Tracker
-  And those stories should appear first on the list, before stories from UserVoice
+#  And I should see a list of stories from Pivotal Tracker
+#  And those stories should appear first on the list, before stories from UserVoice
   
 Scenario: Check to see that the issues are ranked by votes
   Given I am on the End User Index Page for Airbears
