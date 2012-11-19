@@ -24,11 +24,11 @@ Background: issues have been added to database
   And  I am on the home page
 
 Scenario: Check to see that the I AM A DEVELOPER button exists
-  Given I am on the End User Index page for Airbears
+  Given I am on the End User Index Page for Airbears
   Then I should see I AM A DEVELOPER
   
 Scenario: Developer request form
-  Given I am on the End User Index page for Airbears
+  Given I am on the End User Index Page for Airbears
   And I click the add_as_developer button
   Then I should be on the developer request form page
   
