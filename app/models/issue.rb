@@ -7,7 +7,7 @@ class Issue < ActiveRecord::Base
   has_many :comments
   belongs_to :Project
   attr_accessible :name, :link_to_uservoice, :date_entered, :votes, :action, :as_a, :so_that, :i_want
-  
+'''
   def self.symbolize_hash(hash)
     symbolized_hash = {}
     puts hash.inspect
@@ -18,11 +18,11 @@ class Issue < ActiveRecord::Base
     return symbolized_hash
   end
   
-  SUBDOMAIN_NAME = 'berkeley'
-  API_KEY = 'II3Kwdje04R7QHpYjsD3g'
-  API_SECRET = 'd3MgWsy1HUw1XTt7zcjPD3xebJK8MIaI6yC9xJEGbm0'
-  URL = 'http://localhost:3000/'
-  SITE = 'http://berkeley.uservoice.com'
+  SUBDOMAIN_NAME = "berkeley"
+  API_KEY = "II3Kwdje04R7QHpYjsD3g"
+  API_SECRET = "d3MgWsy1HUw1XTt7zcjPD3xebJK8MIaI6yC9xJEGbm0"
+  URL = "http://localhost:3000/"
+  SITE = "http://berkeley.uservoice.com"
   client = UserVoice::Client.new(SUBDOMAIN_NAME, API_KEY, API_SECRET, :callback => URL)
   
   suggestions = client.get("#{SITE}/api/v1/forums/1/suggestions.json")
@@ -31,7 +31,7 @@ class Issue < ActiveRecord::Base
   client.login_as_owner do |owner|
     response = owner.get("#{SITE}/api/v1/tickets.json")
   end
-
+'''
 '''
   consumer = OAuth::Consumer.new(API_KEY, API_SECRET)
 
