@@ -14,8 +14,17 @@ class Project < ActiveRecord::Base
     Project.create!(:name => name, :pivotal_tracker_id => pid)
   end
 
+  def self.add_issue_to_pivotal(issue)
+    PivotalTracker::Client.token = "e78db5b6127c5d5529d236c464f295b3"
+    proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
+    if issue.as_a == nil
+      proj.stories.create(:name => "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
+    else 
+      proj.stories.create(:name => "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
+    end
+  end
+
   def list_all_pivotal_projects
-    puts "fkdsljfs"
     return @projects
   end
 
