@@ -134,3 +134,4 @@ end
 Then /^I click on the issue "(.*)"$/ do |issue_name|
   click_link(issue_name)
 end
+
