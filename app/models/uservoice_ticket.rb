@@ -1,39 +1,38 @@
 require 'uservoice-ruby'
 require 'json'
+require 'mechanize'
 
 class Uservoice_ticket < ActiveRecord::Base
   attr_accessible :body, :subject, :uservoice_id, :uservoice_auther_karma
-  @KEY = 'CLIENT_KEY'
-  @SECRET = 'CLIENT_SECRET'
-  @SITE = 'http://your_subdomain.uservoice.com'
-  @LAST_POLL_DATE = Date.
+  @API_KEY = 'NsOgv6KCGyHQaOhSghlow'
+  @API_SECRET = '88OahJ68hkjHpcIYncmqgEAW88RszQMjT4zQmtng'
+  @SUBDOMAIN_NAME = 'google5'
+  @CALLBACK_URL = 'https://localhost:3000'
+  @SITE = 'http://google5.uservoice.com'
   
   
 
   
   
-  def poll_uservoice
-    consumer = OAuth::Consumer.new(KEY, SECRET)
-    response = consumer.request(:get, "#{SITE}/api/v1/oauth/request_token.json") 
-    request_token_hash = JSON.parse(response.body)
-    
-    response = consumer.request(:post, "#{SITE}/api/v1/oauth/authorize.json", nil, {}, {
-      :sso => sso_token, :request_token => request_token_hash["token"]["oauth_token"]})
-    user_hash = JSON.parse(response.body)
-    
-    access_token = OAuth::AccessToken.from_hash(consumer, symbolize_hash(user_hash["token"]))
-    
-    response = access_token.request(:get, "#{SITE}/api/v1/tickets.json?per_page=100&page=1&filter=updated_after&updated_after_date=LAST_POLL_DATE")
-    body = JSON.parse(response.body)
-    total_records = body["total_records"]
+  def self.poll_uservoice
+    client = UserVoice::Client.new('google5', 'NsOgv6KCGyHQaOhSghlow', '88OahJ68hkjHpcIYncmqgEAW88RszQMjT4zQmtng', :callback => 'http://localhost:3000/')
+    client.login_as_owner do |owner|
+      response = owner.get_collection("/api/v1/tickets.json")
+      response.each do |ticket|
+        uv_ticket = Uservoice_ticket.new
+        uv_ticket.body = ticket['body']
+        uv_ticket.subject = ticket['subject']
+        uv_ticket.uservoice_id = ticket['id']
+        uv_ticket.save
+      end
+    end
     
   end
-  
-  
-  
-  #helper method
+
+
   def symbolize_hash(hash)
     symbolized_hash = {}
+    # puts hash.inspect
     hash.each do |key, value|
       symbolized_hash[key.to_sym] = value
     end

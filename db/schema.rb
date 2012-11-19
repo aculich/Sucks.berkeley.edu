@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104041138) do
+ActiveRecord::Schema.define(:version => 20121112225730) do
 
   create_table "comments", :force => true do |t|
     t.string   "issue_name"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20121104041138) do
     t.string   "i_want"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "uservoice_tickets", :force => true do |t|
+    t.string   "body"
+    t.string   "subject"
+    t.datetime "uservoice_id"
+    t.string   "uservoice_auther_karma"
   end
 
 end
