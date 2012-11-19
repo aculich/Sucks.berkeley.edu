@@ -30,7 +30,6 @@ Given /^I click the submit arrow$/ do
   click_button("submit_arrow")
 end
 
-
 Then /^I should see '([^']*)' at the top of the page$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -51,23 +50,23 @@ Given /^(?:|I )am on (.+ page)$/ do |page_name|
   visit path_to(page_name)
 end
 
-Given /^(?:|I )am on (.+ for .+")$/ do |page_name|
+Given /^(?:|I )am on (.* for .*)$/ do |page_name|
   visit path_to(page_name)
 end
 
-Given /^I am on Page 2 for "(.*?)" with the correct information displayed$/ do |issue_name|
+Given /^I am in Page 2 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 2 for the issue \"#{issue_name}\""
   step "I should see \"Are any of these your issue?\""
 end
 
-Given /^I am on Page 3 for "(.*?)" with the correct information displayed$/ do |issue_name|
+Given /^I am in Page 3 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 3 for the issue \"#{issue_name}\""
   step "I should see \"#{issue_name} sucks! Why? Help us fill out this sentence!\""
   step "I should see \"I want\""
   step "I should see \"so that\""
 end
 
-Given /^I am on Page 4 for "(.*?)" with the correct information displayed$/ do |issue_name|
+Given /^I am in Page 4 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 4 for the issue \"#{issue_name}\""
   step "I should see \"As a\""
   step "I should see \"So that #{Issue.find_by_name(issue_name).so_that}\""
@@ -75,7 +74,7 @@ Given /^I am on Page 4 for "(.*?)" with the correct information displayed$/ do |
   step "I should see \"I AM A DEVELOPER\""
 end
 
-Given /^I am on Page 5 for "(.*?)" with the correct information displayed$/ do |issue_name|
+Given /^I am in Page 5 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 5 for the issue \"#{issue_name}\""
   step "I should see \'#{issue_name} Sucks!\' at the top of the page"
   step "I should see \"What was I doing?\""
