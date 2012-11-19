@@ -47,6 +47,8 @@ gem 'uservoice-ruby'
 
 gem 'pivotal-tracker'
 
+gem 'mechanize'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
