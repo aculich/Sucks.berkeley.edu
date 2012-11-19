@@ -28,14 +28,10 @@ Scenario: Check to see that the I AM A DEVELOPER button exists
   Then I should see I AM A DEVELOPER
   
 Scenario: Developer request form
-  Given I am on the End User Index page for Airbears
-  And I click the add_as_developer button
-  Then I should be on the developer request form page
-  
-Scenario: Fill in the developer request form  
-  Given I am on the developer request form page
-  And I should see a text box for Name, Email, and Pivotal Account
-  And I fill in Name with Sue and Email with 123@gmail.com, suesylvester
+  Given I am on the Issue Info page for Airbears
+  And I click the I AM A DEVELOPER  button
+  Then I should see a text box for Name, Email, and Pivotal Account
+  And I fill in Name with Sue and Email with 123@gmail.com and Account with suesylvester
   And I press Submit
-  Then I should be on the confirmation screen
+  Then I should be on the Issue Info page
   And I should see "Your request has been sent"
