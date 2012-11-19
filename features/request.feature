@@ -24,12 +24,12 @@ Background: issues have been added to database
   And  I am on the home page
 
 Scenario: Check to see that the I AM A DEVELOPER button exists
-  Given I am on the Issue Info Page for Airbears
-  Then I should see I AM A DEVELOPER
+  Given I am on the Issue Info Page for I can go on the internet
+  Then I should see "I AM A DEVELOPER"
   
 Scenario: Developer request form
-  Given I am on the Issue Info Page for Airbears
-  And I click the I AM A DEVELOPER  button
+  Given I am on the Issue Info Page for I can go on the internet
+  And I follow "I AM A DEVELOPER"
   Then I should see a text box for Name, Email, and Pivotal Account
   And I fill in Name with Sue and Email with 123@gmail.com and Account with suesylvester
   And I press Submit
