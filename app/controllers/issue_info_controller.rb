@@ -8,9 +8,8 @@ class IssueInfoController < ApplicationController
     @issue_name = @issue.name
 	  if params["vote"] == "true"
 		@issue.votes += 1
-        Project.add_issue_to_pivotal(@issue)          
-      end     
-		  @issue.save!
+        Project.add_issue_to_pivotal(@issue)             
+		@issue.save!
 	  end
     if request.post?
       RequestMailer.send_request(params[:name], params[:email], params[:pid], params[:issue_id]).deliver
