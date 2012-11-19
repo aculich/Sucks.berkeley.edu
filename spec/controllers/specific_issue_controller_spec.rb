@@ -9,6 +9,32 @@ describe SpecificIssueController do
       post :show, :issue_name => issue.name, "want-text" => "I want candy", "so-text" => "cavities", :method => "put"
       response.should redirect_to("/issue_info/#{issue.id + 1}")
     end
+
+    it "should call project model methods to create new project if doesn't exist" do
+      issue = Issue.create()
+      issue.name = "Airbears"
+      Project.should_receive(:find_all_by_name).with("Airbears").and_return([])
+      Project.should_receive(:create_pivotal_project).with("Airbears")
+      post :show, :issue_name => issue.name, "want-text" => "I want candy", "so-text" => "cavities", :method => "put"
+      response.should redirect_to("/issue_info/#{issue.id + 1}")
+    end
+
+    it "should create issue with link to uservoice if originally a ticket" do
+      issue = Issue.create()
+      issue.name = "Airbears"
+      @m_proj = mock('Project')
+      @m_issues = mock('Issue')
+      @m_new_issue = mock('Issue')
+      @m_new_issue.should_receive(:link_to_uservoice=).with("http://uservoice.com")
+      @m_new_issue.should_receive(:save)
+      @m_new_issue.should_receive(:id).and_return(issue.id + 1)
+      Project.should_receive(:find_by_name).with("Airbears").and_return(@m_proj)
+	  @m_proj.stub!(:uservoice_url).and_return("http://uservoice.com")
+      @m_proj.should_receive(:issues).and_return(@m_issues)
+      @m_issues.should_receive(:build).and_return(@m_new_issue)
+      post :show, :issue_name => issue.name, "want-text" => "I want candy", "so-text" => "cavities", :method => "put", :uservoice_url => "http://uservoice.com"
+      response.should redirect_to("/issue_info/#{issue.id + 1}")
+    end
   end
 
   describe "clicking on the submit button with no i_want parameter entered" do
