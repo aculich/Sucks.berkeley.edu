@@ -31,6 +31,9 @@ module NavigationHelpers
 
   when /^the End User Index Page for (.*)$/
     "/end_user_index/#{$1}"
+
+  when /^the Specific Issue Page for (.*)$/
+    "/specific_issue/#{$1}"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
