@@ -26,6 +26,16 @@ Scenario: Check stories to Pivotal Tracker
   Then I should be on the End User Index Page for Airbears
   Then I should see "Airbears"
 #  And I should see a list of stories from Pivotal Tracker
+
+Scenario:Pull progress from PivotalTracker
+  Given I am on the Sucks.Berkeley.edu home page
+  And I fill in the text box with "Airbears"
+  And I click the submit arrow
+  Then I should be on the End User Index Page for Airbears
+  Then I should see "Airbears"
+  And I should see a list of stories from Pivotal Tracker
+  And I should see the status "Claimed" at the top of the page
+  # ^ we might actually implement this differently, feel free to change
   
 #Scenario: Check to see issues from PivotalTracker are above UserVoice
 #  Given I am on the End User Index Page for Airbears

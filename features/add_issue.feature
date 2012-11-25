@@ -70,3 +70,12 @@ Scenario: enter information
 Scenario: visit issue information page
  Given I am in Page 4 for issue "Airbears" with the correct information displayed
  Then I should see "No developers have claimed this task yet..."
+ 
+Scenario: validation flashes for blank text box
+ Given I am on the Sucks.Berkeley home page
+ And I press the submit arrow
+ Then I should get an error box that tells me the query is blank
+ # ^ can we just loop this for every page, or do we have to write it for each page?
+ # I feel like if we have 80% coverage, we don't have to do a cuke test for this feature
+ # on every page, but if we need more coverage, then I guess this would be a good way
+ # to get more coverage
