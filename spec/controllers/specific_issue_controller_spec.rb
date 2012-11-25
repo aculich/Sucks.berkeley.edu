@@ -11,6 +11,14 @@ describe SpecificIssueController do
     end
 
     it "should call project model methods to create new project if doesn't exist" do
+      m_proj = mock("Project")
+      m_issues = mock("Issue")
+      m_issue = mock("Issue")
+      Project.should_receive(:find_by_name).with("Airbears").and_return(m_proj)
+      m_proj.should_receive(:issues).and_return(m_issues)
+      m_issues.should_receive(:build).and_return(m_issue)
+      m_issue.should_receive(:save)
+      m_issue.should_receive(:id).and_return(2)
       issue = Issue.create()
       issue.name = "Airbears"
       Project.should_receive(:find_all_by_name).with("Airbears").and_return([])
