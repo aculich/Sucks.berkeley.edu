@@ -1,8 +1,8 @@
 Feature: Developer page has "Projects" and a list of issues under that project
 
-  As a TEMPORARY,
-  So that I can TEMPORARY,
-  I want to TEMPORARY
+  As a Prospective Developer,
+  So that I can see what people have problems with,
+  I want to see a list of projects
 
 Background: issues have been added to database
 

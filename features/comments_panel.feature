@@ -1,8 +1,8 @@
 Feature: Implement Comments Panel for a specific issue between users / developers
 
-  As a TEMPORARY,
-  So that I can TEMPORARY,
-  I want to TEMPORARY
+  As a frustrated user,
+  So that I can comment and contribute to an issue,
+  I want to see a comments panel
 
 Background: issues have been added to database
 

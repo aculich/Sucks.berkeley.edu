@@ -1,8 +1,8 @@
 Feature: Add ideas / previous issues as clickable button on the Sucks.berkeley homepage
 
-  As a TEMPORARY,
-  So that I can TEMPORARY,
-  I want to TEMPORARY
+  As a frustrated user,
+  So that I can upvote their issues or create my own,
+  I want to see what problems other users have
 
 Background: issues have been added to database
 

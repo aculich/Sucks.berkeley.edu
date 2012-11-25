@@ -1,8 +1,8 @@
 Feature: Implement Questions Panel for developers to ask questions to users
 
-  As a TEMPORARY,
-  So that I can TEMPORARY,
-  I want to TEMPORARY
+  As a Prospective Developer,
+  So that I can ask frustrated users for clarification about their issue,
+  I want to see a questions panel
 
 Background: issues have been added to database
 
