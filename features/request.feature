@@ -34,4 +34,4 @@ Scenario: Developer request form
   And I fill in Name with Sue and Email with 123@gmail.com and Account with suesylvester
   And I press Request
   Then I should be on the Issue Info Page for I can go on the internet
-  And I should see "Your request has been sent"
+  #And I should see "Your request has been sent"

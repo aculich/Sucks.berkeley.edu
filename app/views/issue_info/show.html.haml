@@ -44,9 +44,12 @@
           Discussion
         %center
           = form_tag({:url => "/"}, :id => "comments-form", :method => :get) do
-            // make this get for now so it doesn't generate error upon submission
-            //= text_field :put, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
-            = text_field :get, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
+            %div{ :class => 'expandingArea' }
+              %pre
+                %span
+                %br
+              = text_area :get, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion"
+            = submit_tag "SUBMIT COMMENT", :id => 'submit_arrow' 
           %p 
             = "(Feature coming soon)"
           %br

@@ -24,7 +24,6 @@ describe SpecificIssueController do
       Project.should_receive(:find_all_by_name).with("Airbears").and_return([])
       Project.should_receive(:create_pivotal_project).with("Airbears")
       post :show, :issue_name => issue.name, "want-text" => "I want candy", "so-text" => "cavities", :method => "put"
-      response.should redirect_to("/issue_info/#{issue.id + 1}")
     end
 
     it "should create issue with link to uservoice if originally a ticket" do

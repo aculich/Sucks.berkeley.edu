@@ -41,6 +41,9 @@ module NavigationHelpers
       issue = Issue.find_by_so_that($1)
       "/issue_info/#{issue.id}"
 
+    when /^the developer page$/
+      "/issues"
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
