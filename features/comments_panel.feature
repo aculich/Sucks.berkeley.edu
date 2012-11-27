@@ -13,7 +13,7 @@ Background: issues have been added to database
   | Perimeter Buses     | google.com		 | 26-Oct-1984      | 2	     | waiting for a bus     | Professor         | I can get to class on time  | To know when the bus will arrive |
   | CS169               | google.com         | 21-Jul-1989 		| 1	     | working on a project  | Student           | I can pass the class        | The website to work              |
   
-  And  I am on the developer page
+  And  I am on Page 4 for the issue "Airbears"
 
 Scenario: see comment panel displayed
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
