@@ -294,6 +294,8 @@
   width: 90%;
   border: 1px solid #CCC;
   margin-top: 1em;
+  font-size: 14px;
+  line-height: .9em;
 }
 
 .expandingArea > textarea,
@@ -302,7 +304,9 @@
   background: transparent;
   white-space: pre-wrap;
   word-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
 }
+
 .expandingArea > textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -335,11 +339,12 @@
 }
 
 #comments-form input {
-  width: 30%;
+  width: 32%;
   padding: .2em;
   float: left;
   position: relative;
   border: 1px solid #CCC;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #comments-form input[type='submit']{
