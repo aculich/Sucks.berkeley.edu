@@ -293,7 +293,7 @@
   position: relative;
   width: 90%;
   border: 1px solid #CCC;
-  margin-top: 2em;
+  margin-top: .5em;
 }
 
 .expandingArea > textarea,
@@ -327,6 +327,20 @@
   visibility: hidden;
 }
 
+.nonexpanding {
+  display: block;
+  height: 1.5em;
+  width: 91%;
+  margin-top: 1.5em;
+}
+
+#comments-form input {
+  padding: .2em;
+  float: left;
+  position: relative;
+  border: 1px solid #CCC;
+}
+
 #comments-form input[type='submit']{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -341,6 +355,7 @@
   text-decoration: none;
   width: auto;
   margin: 1em 0 0 0;
+  float: none;
 }
 
 #comments-form input[type='submit']:hover{

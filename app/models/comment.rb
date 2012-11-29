@@ -1,4 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :Issue
-  attr_accessible :commentor_name, :date, :details
+  belongs_to :issue
+  attr_accessible :commentor_name, :date, :details, :issue_id
 end

@@ -43,15 +43,19 @@
         %div{ :class => "content-title" }
           Discussion
         %center
-          = form_tag({:url => "/"}, :id => "comments-form", :method => :get) do
+          %ul{ :id => "comments-list" }
+            - if @comments != nil
+              - @comments.each do |comment|
+                %li= comment.details
+          = form_tag({}, :id => "comments-form") do
+            %div{ :class => 'nonexpanding' }
+              = text_field :put, :commenter_name, :name => 'commentor-name', :placeholder => 'Name'
             %div{ :class => 'expandingArea' }
               %pre
                 %span
                 %br
-              = text_area :get, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion"
-            = submit_tag "SUBMIT COMMENT", :id => 'submit_arrow' 
-          %p 
-            = "(Feature coming soon)"
+              = text_area :put, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion"
+            = submit_tag "SUBMIT COMMENT", :id => 'submit_arrow'
           %br
   %div{ :id => "request-popup" }
     %div{ :id => "close-popup" }
