@@ -42,11 +42,14 @@
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           Discussion
+        %ul{ :id => "comments-list" }
+          - if @comments != nil
+            - @comments.each do |comment|
+              %li
+                %div{:class => 'c-name' }= comment.commentor_name
+                %div{:class => 'c-date' }= comment.date
+                %div{:class => 'c-details' }= comment.details
         %center
-          %ul{ :id => "comments-list" }
-            - if @comments != nil
-              - @comments.each do |comment|
-                %li= comment.details
           = form_tag({}, :id => "comments-form") do
             %div{ :class => 'nonexpanding' }
               = text_field :put, :commenter_name, :name => 'commentor-name', :placeholder => 'Name'

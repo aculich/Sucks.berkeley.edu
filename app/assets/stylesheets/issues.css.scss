@@ -335,7 +335,7 @@
   display: block;
   height: 1.5em;
   width: 90%;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 #comments-form input {
@@ -367,4 +367,45 @@
 #comments-form input[type='submit']:hover{
   background-color: #33BEF5;
   cursor: pointer;
+}
+
+#comments-list {
+  list-style: none;
+  width: 90%;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: .9em;
+}
+
+.c-name {
+  float: left;
+  width: 60%;
+}
+
+.c-date {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+.c-details {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-color: #DDD;
+  padding: .7em;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+.c-details:after {
+  content: "";
+  top: -7px;
+  left: 5px;
+  display: block;
+  position: absolute;
+  width: 0;
+  border-width: 0 10px 10px;
+  border-style: solid;
+  border-color: #DDD transparent;
 }
