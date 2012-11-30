@@ -65,7 +65,8 @@ match 'specific_issue/:issue_name' => 'specific_issue#show'
 
 match 'prototype' => 'prototype#index'
 
-  resources :issues
+resources :issues
+resources :projects
   
 
   # See how all your routes lay out with "rake routes"

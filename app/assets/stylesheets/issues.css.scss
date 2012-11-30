@@ -24,6 +24,28 @@
   float: left;
 }
 
+#faux-th>.full-col {
+  position:relative;
+  padding: .25em 0em;
+  margin:1em 0 1em;
+  color:#FFF;
+  background:#1F87E0;
+  float: left;
+  width: 100%;
+}
+
+#faux-th>.full-col:after {
+   content: "";
+   display: block;
+   position: absolute;
+   bottom: -10px;
+   left: 50px;
+   width: 0;
+   border-width: 10px 10px 0;
+   border-style: solid;
+   border-color: #1F87E0 transparent;
+}
+
 #faux-th>.col1 {
   position:relative;
   padding: .25em 0em;
