@@ -67,7 +67,8 @@ match 'prototype' => 'prototype#index'
 
 resources :issues
 resources :projects
-  
+
+resources :project, :collection => {:autocomplete_for_project => :get}
 
   # See how all your routes lay out with "rake routes"
 

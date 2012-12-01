@@ -1,4 +1,5 @@
 class WhatSucksController < ApplicationController
+  autocomplete_for :project, :name
   def index
   end
 
