@@ -6,18 +6,33 @@ class Uservoice_ticket < ActiveRecord::Base
 
   def self.poll_uservoice
     client = UserVoice::Client.new(GlobalConstants::UV_SUBDOMAIN, GlobalConstants::UV_API_KEY, GlobalConstants::UV_API_SECRET, :callback => GlobalConstants::CALLBACK_URL)
+    dateAndTime = Daterecord.find_by_name('UservoiceDate')
+    if not dateAndTime
+      dateAndTime = Daterecord.new
+      dateAndTime.name = 'UservoiceDate'
+      dateAndTime.dt = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+      dateAndTime.save
+    end
     client.login_as_owner do |owner|
-      response = owner.get_collection("/api/v1/tickets.json")
+      response = owner.get_collection("/api/v1/tickets.json?filter=updated_after&updated_after_date=#{dateAndTime.dt.strftime("%Y-%m-%d%H:%M:%S")}-0000")
       response.each do |ticket|
-        uv_ticket = Uservoice_ticket.new
-        uv_ticket.body = ticket['body']
-        uv_ticket.subject = ticket['subject']
-        uv_ticket.uservoice_id = ticket['id']
-        uv_ticket.ticket_number = ticket['ticket_number']
-        uv_ticket.url = ticket['url']
-        uv_ticket.save
+        if DateTime.parse(ticket['updated_at']) > dateAndTime.dt
+          uv_ticket = Uservoice_ticket.new
+          uv_ticket.body = ticket['body']
+          uv_ticket.subject = ticket['subject']
+          uv_ticket.uservoice_id = ticket['id']
+          uv_ticket.ticket_number = ticket['ticket_number']
+          uv_ticket.url = ticket['url']
+          uv_ticket.save
+        end
       end
+      dateAndTime.dt = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+      dateAndTime.save
     end
     
   end
 end
+
+
+
+

@@ -28,4 +28,6 @@ issues.each do |issue|
   Project.add_issue_to_pivotal(new_issue)
 end
 
+daterecords = [{:name => 'UservoiceDate', :dt => '2012-12-01 08:00:00' }]
+
 Uservoice_ticket.poll_uservoice()
