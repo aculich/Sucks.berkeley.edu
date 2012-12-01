@@ -24,9 +24,6 @@ class Issue < ActiveRecord::Base
   end
 
   def get_pivotal_id()
-    #PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
-    #pivotal_proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
-    #return pivotal_proj.pivotal_tracker_id
     return project.pivotal_tracker_id
   end
 
