@@ -1,10 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-projects_names = ['Telebears', 'Airbears', 'schedule.berkeley.edu', 'bspace', 'piazza' ]
 
-projects_names.each do |name|
-  Project.create_pivotal_project(name)
+PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
+
+pivotal_projects = PivotalTracker::Project.all
+
+pivotal_projects.each do |pivotal_project|
+  Project.create_pivotal_project(pivotal_project.name)
 end
 
 issues = [{:name => 'Telebears', :action => 'signing up for classes', :date_entered => '25-Nov-1992', :votes => 2, :as_a => 'fourth year undergraduate student', :so_that => 'I can get into a class I need to graduate in four years', :i_want => 'Telebears not to crash'},
