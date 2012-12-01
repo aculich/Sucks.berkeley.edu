@@ -216,6 +216,11 @@
 }
 */
 
+#vote-button {
+  float: right;
+  color: #FFF;
+}
+
 #issue-tr{
   color: #FFF;
   width: 100%;
@@ -271,6 +276,19 @@
 
 .dark-swiss-army-box span{
   font-size: 1.25em;
+}
+
+#issue-info-header {
+  padding-top: .5em;
+  width: 95%;
+  margin: auto;
+}
+
+#issue-info-title {
+  font-size: 1.25em;
+  margin-top: .5em;
+  margin-right: 1em;
+  float: left;
 }
 
 .dark-swiss-army-box p {
