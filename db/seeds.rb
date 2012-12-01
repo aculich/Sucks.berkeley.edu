@@ -4,7 +4,6 @@
 projects_names = ['Telebears', 'Airbears', 'schedule.berkeley.edu', 'bspace', 'piazza' ]
 
 projects_names.each do |name|
-  debugger
   Project.create_pivotal_project(name.camelize)
 end
 
