@@ -10,9 +10,17 @@ class Issue < ActiveRecord::Base
   
   def get_progress()
   	PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
-	pivotal_proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
+	pivotal_proj = PivotalTracker::Project.all.select {|x| x.name == name}[0]
 	pivotal_issue = pivotal_proj.stories.all.select{|x| x.id == pivotal_issue_id}[0]
-	@progress = pivotal_issue.current_state()
+	pivotal_progress = pivotal_issue.current_state()
+	if pivotal_progress == "unscheduled" or pivotal_progress == "unstarted"
+	  return "submitted"
+	elsif 
+	  pivotal_progress == "finished"
+	  return "completed"
+	else
+	  return "in progress"
+	end
   end
   
 '''
