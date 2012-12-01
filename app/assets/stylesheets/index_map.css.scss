@@ -1,0 +1,17 @@
+#chart {
+  width: 100%;
+  height: 100%;
+  margin-top: 48px;
+  float: left;
+  background-color: #FFF;
+}
+
+.cell {
+  opacity: .8;
+  color: #FFF; 
+}
+
+.cell:hover {
+  opacity: .9;
+  cursor: pointer;
+}
