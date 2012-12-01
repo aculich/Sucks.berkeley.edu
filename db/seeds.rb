@@ -4,7 +4,8 @@
 projects_names = ['Telebears', 'Airbears', 'schedule.berkeley.edu', 'bspace', 'piazza' ]
 
 projects_names.each do |name|
-  Project.create_pivotal_project(name)
+  debugger
+  Project.create_pivotal_project(name.camelize)
 end
 
 issues = [{:name => 'Telebears', :action => 'signing up for classes', :date_entered => '25-Nov-1992', :votes => 2, :as_a => 'fourth year undergraduate student', :so_that => 'I can get into a class I need to graduate in four years', :i_want => 'Telebears not to crash'},
