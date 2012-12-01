@@ -5,6 +5,14 @@ body {
   height: 100%
 }
 
+textarea, 
+pre {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+
 h2 {
   font-size: 1em;
 }
@@ -28,11 +36,12 @@ header a span{
   color: #F7BE00;
 }
 
-#issues-index {
+#projects-index {
   color: #FFF;
+  text-decoration: none;
 }
 
-#issues-index:hover {
+#projects-index:hover {
   color: #38A8E7;
 }
 
@@ -41,6 +50,7 @@ header a span{
   top: 25%;
   left: 0;
   width: 100%;
+  pointer-events: none;
 }
 
 #main-box {
@@ -51,14 +61,36 @@ header a span{
   margin: -.5em auto;
   width: 95%;
   min-width: 290px;
-  max-width: 18em;
+  max-width: 330px;
   padding: 1.5em .5em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
   color: #666;
   font-size: 1.1em;
   font-family: 'Open Sans Condensed', sans-serif;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+}
+
+#sub-box {
+  background-color: #000;
+  -webkit-box-shadow: 0em 0em .5em .05em #333;
+  -moz-box-shadow: 0em 0em .5em .05em #333;
+  box-shadow: 0em 0em .5em .05em #333;
+  margin: 0 auto;
+  padding: 1.5em .5em .8em .5em;
+  min-width: 290px;
+  max-width: 330px;
+  width: 95%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  opacity: .6;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
 #main-box form {
@@ -117,48 +149,6 @@ header a span{
   width: 80%;
 }
 
-#main-box #student-identity{
-  width: 5.5em;
-  border: 1px solid #999;
-  background-image: none;
-  background-color: #cef0f0;
-  margin-left: 0.725em;
-  float: left;
-}
-
-#main-box #professor-identity{
-  width: 5.5em;
-  border: 1px solid #999;
-  background-image: none;
-  background-color: #cef0f0;
-  margin-left: .5em;
-  float: left;
-}
-
-#main-box #staff-identity{
-  width: 5.5em;
-  border: 1px solid #999;
-  background-image: none;
-  background-color: #cef0f0;
-  margin-left: .5em;
-  float: left;
-}
-
-#main-box #student-identity:hover{
-  color: #FFF;
-  background-color: #324f63;
-}
-
-#main-box #professor-identity:hover{
-  color: #FFF;
-  background-color: #324f63;
-}
-
-#main-box #staff-identity:hover{
-  color: #FFF;
-  background-color: #324f63;
-}
-
 #submit-issue {
   border: 1px solid #999;
   background-color: #FFF;
@@ -192,6 +182,7 @@ header a span{
   -webkit-box-shadow: inset 0 0 5px #333;
   color: #FFF;
   font-size: .8em;
+  pointer-events: auto;
 }
 
 #tracking-box span {
@@ -212,6 +203,7 @@ header a span{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  pointer-events: auto;
 }
 
 .swiss-army-box .content-title {
@@ -295,6 +287,7 @@ header a span{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  pointer-events: auto;
 }
 
 .notice-swiss-army-box span{

@@ -42,13 +42,23 @@
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           Discussion
+        %ul{ :id => "comments-list" }
+          - if @comments != nil
+            - @comments.each do |comment|
+              %li
+                %div{:class => 'c-name' }= comment.commentor_name
+                %div{:class => 'c-date' }= comment.date
+                %div{:class => 'c-details' }= comment.details
         %center
-          = form_tag({:url => "/"}, :id => "comments-form", :method => :get) do
-            // make this get for now so it doesn't generate error upon submission
-            //= text_field :put, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
-            = text_field :get, :comment_text, :name => 'comment-text', :placeholder => " Contribute to the discussion" 
-          %p 
-            = "(Feature coming soon)"
+          = form_tag({}, :id => "comments-form") do
+            %div{ :class => 'nonexpanding' }
+              = text_field :put, :commenter_name, :name => 'commentor-name', :placeholder => 'Name'
+            %div{ :class => 'expandingArea' }
+              %pre
+                %span
+                %br
+              = text_area :put, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion"
+            = submit_tag "SUBMIT COMMENT", :id => 'submit_arrow'
           %br
   %div{ :id => "request-popup" }
     %div{ :id => "close-popup" }

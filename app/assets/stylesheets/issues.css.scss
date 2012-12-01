@@ -3,6 +3,7 @@
   max-width: 50em;
   min-width: 20em;
   width: 75%;
+  pointer-events: auto;
 }
 
 #issues-table {
@@ -22,6 +23,28 @@
 #issues-table #faux-th-100{
   width: 100%;
   float: left;
+}
+
+#faux-th>.full-col {
+  position:relative;
+  padding: .25em 0em;
+  margin:1em 0 1em;
+  color:#FFF;
+  background:#1F87E0;
+  float: left;
+  width: 100%;
+}
+
+#faux-th>.full-col:after {
+   content: "";
+   display: block;
+   position: absolute;
+   bottom: -10px;
+   left: 50px;
+   width: 0;
+   border-width: 10px 10px 0;
+   border-style: solid;
+   border-color: #1F87E0 transparent;
 }
 
 #faux-th>.col1 {
@@ -289,13 +312,125 @@
   background-color: #F7BE00;
 }
 
-#comments-form {
-  margin: 1.5em;
+.expandingArea {
+  position: relative;
+  width: 90%;
+  border: 1px solid #CCC;
+  margin-top: 1em;
+  font-size: 14px;
+  line-height: .9em;
+}
+
+.expandingArea > textarea,
+.expandingArea > pre {
+  padding: .2em;
+  background: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.expandingArea > textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 1.5em;
+  width: 100%;
+}
+.expandingArea.active > textarea {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  resize: none;
+}
+.expandingArea > pre {
+  display: none;
+}
+.expandingArea.active > pre {
+  display: block;
+  visibility: hidden;
+}
+
+.nonexpanding {
+  display: block;
+  height: 1.5em;
+  width: 90%;
+  margin-top: 1em;
 }
 
 #comments-form input {
-  width: 95%;
-  height: 1.5em;
+  width: 32%;
+  padding: .2em;
+  float: left;
+  position: relative;
   border: 1px solid #CCC;
-  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#comments-form input[type='submit']{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #1F87E0;
+  color: #FFF;
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: .175em .725em .325em .725em;
+  border: 0 none;
+  display: inline-block;
+  font-size: .8em;
+  text-decoration: none;
+  width: auto;
+  margin: 1em 0 0 0;
+  float: none;
+}
+
+#comments-form input[type='submit']:hover{
+  background-color: #33BEF5;
+  cursor: pointer;
+}
+
+#comments-list {
+  list-style: none;
+  margin: 1em auto;
+  padding: 0;
+  width: 90%;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: .9em;
+}
+
+.c-name {
+  float: left;
+  width: 60%;
+}
+
+.c-date {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+.c-details {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-color: #DDD;
+  padding: .7em;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+.c-details:after {
+  content: "";
+  top: -7px;
+  left: 5px;
+  display: block;
+  position: absolute;
+  width: 0;
+  border-width: 0 10px 10px;
+  border-style: solid;
+  border-color: #DDD transparent;
 }

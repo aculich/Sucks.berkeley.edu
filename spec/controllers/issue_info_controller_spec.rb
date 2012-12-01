@@ -37,6 +37,11 @@ describe IssueInfoController do
     end
   end
 
+  describe "Clicking on the answer question button" do
+    it "should post answer from user" do
+    end
+  end
+
   describe "clicking on the submit comment button" do
     it "should post comment from other user" do
     end

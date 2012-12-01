@@ -1,0 +1,13 @@
+%section
+  %div{ :id => "center-container" }
+    %div{ :id => "content-container" }
+      %div{ :id => "issues-table" }
+        %div{ :id => "faux-th" }
+          - if @projects != []
+            %div{ :class => "full-col" }
+              &nbsp&nbsp&nbspProjects
+            - @projects.each do |project|
+              %a{ :href => "/projects/#{project.id}" }
+                %div{ :id => "issue-tr" }
+                  %div{ :class => "col1" }
+                    %div= project.name
