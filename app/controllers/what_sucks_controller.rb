@@ -3,8 +3,8 @@ class WhatSucksController < ApplicationController
   end
 
   def create
-    issue_name = params["what-text"]
-    ticket_exists = (Uservoice_ticket.all.map {|ticket| ticket.subject}).include?(params["what-text"])
+    issue_name = params["what-text"].capitalize
+    ticket_exists = (Uservoice_ticket.all.map {|ticket| ticket.subject}).include?(params["what-text"].capitalize)
     if !ticket_exists
       Uservoice_ticket.poll_uservoice
     end
@@ -13,7 +13,7 @@ class WhatSucksController < ApplicationController
       redirect_to "/" and return
     else
       issue = Issue.new
-      issue_name = params["what-text"].gsub(" ", "%20")
+      issue_name = params["what-text"].gsub(" ", "%20").capitalize
       redirect_to "/end_user_index/#{issue_name}"
     end
   end

@@ -205,6 +205,7 @@
   float: left;
 }
 
+/*
 #faux-tr:hover:after{
   position: absolute;
   margin-left: .5em;
@@ -212,6 +213,17 @@
   font-size: .8em;
   color: #F7BE00;
   content: "+1";
+}
+*/
+
+#vote-button {
+  float: right;
+  color: #FFF;
+}
+
+.grayed-out {
+  background-color: #CCC !important;
+  cursor: default !important;
 }
 
 #issue-tr{
@@ -269,6 +281,19 @@
 
 .dark-swiss-army-box span{
   font-size: 1.25em;
+}
+
+#issue-info-header {
+  padding-top: .5em;
+  width: 95%;
+  margin: auto;
+}
+
+#issue-info-title {
+  font-size: 1.25em;
+  margin-top: .5em;
+  margin-right: 1em;
+  float: left;
 }
 
 .dark-swiss-army-box p {

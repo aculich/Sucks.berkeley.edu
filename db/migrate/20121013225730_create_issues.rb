@@ -10,6 +10,8 @@ class CreateIssues < ActiveRecord::Migration
 	  t.string :so_that
 	  t.string :i_want
       t.integer :project_id
+	  t.integer :pivotal_issue_id
+	  t.string :progress
 #      t.string :goal
 #      t.text :identity_tags
 #      t.datetime :date_entered

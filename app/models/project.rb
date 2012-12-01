@@ -19,10 +19,11 @@ class Project < ActiveRecord::Base
       PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
       proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
       if issue.as_a == nil
-        proj.stories.create(:name => "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
+		pivotal_issue = proj.stories.create(:name => "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
       else 
-        proj.stories.create(:name => "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
+        pivotal_issue = proj.stories.create(:name => "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
       end
+	  issue.pivotal_issue_id = pivotal_issue.project_id
     end
   end
 

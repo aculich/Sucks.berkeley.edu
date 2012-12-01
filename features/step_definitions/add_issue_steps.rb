@@ -18,7 +18,7 @@ Then /^I should see a text box for Name, Email, and Pivotal Account$/ do
   assert(find(:css,"input#put_pid").text == "")
 end
 
-And /^I fill in Name with "([^"]*)" and Email with "([^']*)", "([^']*)"$/ do |name, email, pivotal|
+And /^I fill in Name with ([^"]*) and Email with ([^']*) and Account with ([^']*)$/ do |name, email, pivotal|
   fill_in("name", :with=>name)
   fill_in("email", :with=>email)
   fill_in("pid", :with=>pivotal)

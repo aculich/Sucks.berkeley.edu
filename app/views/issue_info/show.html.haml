@@ -6,10 +6,15 @@
           %center
             %p= @notice
       %div{ :class => "dark-swiss-army-box"}
-        %p
-          %span
+        %div{ :id => "issue-info-header" }
+          %div{ :id => "issue-info-title" }
             = "#{@issue_name} Sucks!"
-          %br
+          %div{ :id => "vote-button" }
+            - if session["upvoted_issues"] and session["upvoted_issues"][@issue.id] == "true"
+              =link_to "VOTED", "#", :class => "content-button grayed-out"
+            - else
+              =link_to "VOTE", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
+        %p
           %br
           - if @issue.as_a == "" or @issue.as_a == nil
             = "As a user of " + @issue_name
