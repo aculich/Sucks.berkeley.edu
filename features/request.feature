@@ -32,6 +32,6 @@ Scenario: Developer request form
   And I follow "I AM A DEVELOPER"
   Then I should see a text box for Name, Email, and Pivotal Account
   And I fill in Name with Sue and Email with 123@gmail.com and Account with suesylvester
-  And I press Submit
+  And I click the submit arrow
   Then I should be on the Issue Info Page
   And I should see "Your request has been sent"
