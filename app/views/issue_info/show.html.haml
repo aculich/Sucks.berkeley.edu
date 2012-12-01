@@ -10,7 +10,10 @@
           %div{ :id => "issue-info-title" }
             = "#{@issue_name} Sucks!"
           %div{ :id => "vote-button" }
-            =link_to "VOTE", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
+            - if session["upvoted_issues"] and session["upvoted_issues"][@issue.id] == "true"
+              =link_to "VOTED", "#", :class => "content-button grayed-out"
+            - else
+              =link_to "VOTE", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
         %p
           %br
           - if @issue.as_a == "" or @issue.as_a == nil

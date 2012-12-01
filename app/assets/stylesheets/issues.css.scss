@@ -221,6 +221,11 @@
   color: #FFF;
 }
 
+.grayed-out {
+  background-color: #CCC !important;
+  cursor: default !important;
+}
+
 #issue-tr{
   color: #FFF;
   width: 100%;
