@@ -15,7 +15,6 @@ class Project < ActiveRecord::Base
   end
 
   def self.add_issue_to_pivotal(issue)
-    issue.get_progress()
     if issue.votes == 3
       PivotalTracker::Client.token = GlobalConstants::CLIENT_TOKEN
       proj = PivotalTracker::Project.all.select {|x| x.name == issue.name}[0]
