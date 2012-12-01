@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20121118220605) do
     t.string   "so_that"
     t.string   "i_want"
     t.integer  "project_id"
+    t.integer  "pivotal_issue_id"
+    t.string   "progress"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
