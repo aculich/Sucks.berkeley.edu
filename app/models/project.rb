@@ -23,8 +23,9 @@ class Project < ActiveRecord::Base
       else 
         pivotal_issue = proj.stories.create(:name => "As a #{issue.as_a}, I want #{issue.i_want} so that #{issue.so_that}", :story_type => 'feature')
       end
-	  issue.pivotal_issue_id = pivotal_issue.project_id
+	  issue.pivotal_issue_id = pivotal_issue.id
     end
+    issue.save
   end
 
   def list_all_pivotal_projects

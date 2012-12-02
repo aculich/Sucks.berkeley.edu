@@ -29,10 +29,18 @@
           %div{ :class => "progress" }
             %div{ :class => "progress-col left-round filled-in" }
               SUBMITTED
-            %div{ :class => "progress-col" }
-              IN PROGRESS
-            %div{ :class => "progress-col right-round" }
-              COMPLETED
+            - if @issue.get_progress == 'in progress' or @issue.get_progress == 'completed'
+              %div{ :class => "progress-col filled-in" }
+                IN PROGRESS
+            - else
+              %div{ :class => "progress-col" }
+                IN PROGRESS
+            - if @issue.get_progress == 'completed'
+              %div{ :class => "progress-col right-round filled-in" }
+                COMPLETED
+            - else
+              %div{ :class => "progress-col right-round" }
+                COMPLETED
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           Questions from the developer
@@ -54,10 +62,12 @@
                 %div{:class => 'c-name' }= comment.commentor_name
                 %div{:class => 'c-date' }= comment.date
                 %div{:class => 'c-details' }= comment.details
+                %div{:class => 'c-dev' }= comment.from_developer
         %center
           = form_tag({}, :id => "comments-form") do
             %div{ :class => 'nonexpanding' }
               = text_field :put, :commenter_name, :name => 'commentor-name', :placeholder => 'Name'
+              = text_field :put, :developer_code, :name => 'developer-code', :placeholder => 'Developer Code, Optional'
             %div{ :class => 'expandingArea' }
               %pre
                 %span
