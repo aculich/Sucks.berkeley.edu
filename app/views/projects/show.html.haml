@@ -14,7 +14,7 @@
                 Votes
             - @issues.each do |issue|
               %a{ :href => "/issue_info/#{issue.id}" }
-                %div{ :id => "issue-tr" }
+                %div{ :class => "issue-tr" }
                   %div{ :class => "col1" } 
                     - if issue.as_a == nil
                       %div= "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}"
