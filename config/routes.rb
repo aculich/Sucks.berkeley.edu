@@ -68,8 +68,7 @@ match 'prototype' => 'prototype#index'
 resources :issues
 resources :projects
 
-resources :project, :collection => {:autocomplete_for_project => :get}
-
+match '/what_sucks/autocomplete_for_project_name' => "what_sucks#autocomplete_for_project_name", "method" => "get"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

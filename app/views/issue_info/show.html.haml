@@ -29,10 +29,18 @@
           %div{ :class => "progress" }
             %div{ :class => "progress-col left-round filled-in" }
               SUBMITTED
-            %div{ :class => "progress-col" }
-              IN PROGRESS
-            %div{ :class => "progress-col right-round" }
-              COMPLETED
+            - if @issue.get_progress == 'in progress' or @issue.get_progress == 'completed'
+              %div{ :class => "progress-col filled-in" }
+                IN PROGRESS
+            - else
+              %div{ :class => "progress-col" }
+                IN PROGRESS
+            - if @issue.get_progress == 'completed'
+              %div{ :class => "progress-col right-round filled-in" }
+                COMPLETED
+            - else
+              %div{ :class => "progress-col right-round" }
+                COMPLETED
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           Questions from the developer
