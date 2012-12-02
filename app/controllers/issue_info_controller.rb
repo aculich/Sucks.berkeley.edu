@@ -30,7 +30,8 @@ class IssueInfoController < ApplicationController
         RequestMailer.send_request(params[:name], params[:email], params[:pid], params[:issue_id]).deliver
         @notice = "Your request has been sent"
       elsif params[:'comment-text'] != nil
-        @issue.comments.create!(:commentor_name => params[:'commentor-name'], :date => Time.now, :details => params[:'comment-text'])
+        isDev = params[:'developer-code'] == @issue.get_pivotal_id
+        @issue.comments.create!(:commentor_name => params[:'commentor-name'], :date => Time.now, :details => params[:'comment-text'], :from_developer => isDev)
       end
     end
     #@comment = Issue.comment.where(:issue_name => @issue_name)

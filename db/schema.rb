@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20121201225730) do
     t.datetime "date"
     t.string   "details"
     t.integer  "issue_id"
+    t.boolean  "from_developer"
   end
 
   create_table "daterecords", :force => true do |t|
