@@ -11,7 +11,7 @@ Background: issues have been added to database
   | Airbears            | google.com   	     | 25-Nov-1992	    | 3	     | login                 | Student           | I can go on the internet    | Login to work                    |
   | Airbears            | google.com   	     | 23-Nov-1992	    | 4	     | connection            | IT Professional   | I can connect to the network| The network to be up             |
   | Perimeter Buses     | google.com		 | 26-Oct-1984      | 2	     | waiting for a bus     | Professor         | I can get to class on time  | To know when the bus will arrive |
-  | CS169               | google.com         | 21-Jul-1989 		| 1	     | working on a project  | Student           | I can pass the class        | The website to work              |
+  | Cs169               | google.com         | 21-Jul-1989 		| 1	     | working on a project  | Student           | I can pass the class        | The website to work              |
   
   And  I am on the home page
 
@@ -33,25 +33,25 @@ Scenario: enter an existing issue with multiple entries
   
 Scenario: enter an existing issue with a single entry
   Given I am on the Sucks.Berkeley.edu home page
-  And I fill in the text box with "CS169"
+  And I fill in the text box with "Cs169"
   And I click the submit arrow
-  Then I should be on Page 2 for the issue "CS169"
+  Then I should be on Page 2 for the issue "Cs169"
   And I should see "Is this your issue?"
   And I should see "SUBMIT NEW ISSUE"
-  And I should see "Want to create a new issue for CS169?"
+  And I should see "Want to create a new issue for Cs169?"
   
 Scenario: enter an issue that does not exist
   Given I am on the Sucks.Berkeley.edu home page
-  And I fill in the text box with "CS170"
+  And I fill in the text box with "Cs170"
   And I click the submit arrow
-  Then I should be on Page 2 for the issue "CS170"
-  And I should see "You're the first to have trouble with CS170. Please create a new issue!"
+  Then I should be on Page 2 for the issue "Cs170"
+  And I should see "You're the first to have trouble with Cs170. Please create a new issue!"
   And I should see "SUBMIT NEW ISSUE"
 
 Scenario: select an action from the list
-  Given I am in Page 2 for issue "Airbears" with the correct information displayed
+  Given I am in Page 2 for issue "UniqueAirbears" with the correct information displayed
   And I follow "I can go on the internet"
-  Then I should be in the page for the issue "Airbears"
+  Then I should be in the page for the issue "UniqueAirbears"
  
 Scenario: enter a new issue
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
