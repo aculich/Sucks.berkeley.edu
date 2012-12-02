@@ -17,6 +17,5 @@ Background: issues have been added to database
 
 Scenario: see the correct link displayed on the front page
   Given I am on the Sucks.Berkeley.edu home page
-  Then I should see "sucks!"
-  Then I should see a text box followed by the word "sucks!"
-  And I should see a link that says "previous issues"
+  Then I should see only a text box followed by the word "sucks!"
+  And I should see a link that says "Take me to a list of projects!"

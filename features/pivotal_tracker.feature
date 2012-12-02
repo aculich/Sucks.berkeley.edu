@@ -33,9 +33,10 @@ Scenario:Pull progress from PivotalTracker
   And I click the submit arrow
   Then I should be on the End User Index Page for Airbears
   Then I should see "Airbears"
-  And I should see a list of stories from Pivotal Tracker
-  And I should see the status "Claimed" at the top of the page
-  # ^ we might actually implement this differently, feel free to change
+  And I click on the first issue
+  Then I should see "SUBMITTED"
+  And I should see "IN PROGRESS"
+  And I should see "COMPLETED"
   
 #Scenario: Check to see issues from PivotalTracker are above UserVoice
 #  Given I am on the End User Index Page for Airbears
