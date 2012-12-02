@@ -14,6 +14,8 @@
               =link_to "VOTED", "#", :class => "content-button grayed-out"
             - else
               =link_to "VOTE", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
+          %div{ :id => 'dev-request' }
+            =link_to "I AM A DEVELOPER", "#", :class => 'content-button'
         %p
           %br
           - if @issue.as_a == "" or @issue.as_a == nil
@@ -41,17 +43,6 @@
             - else
               %div{ :class => "progress-col right-round" }
                 COMPLETED
-      %div{ :class => "swiss-army-box" }
-        %div{ :class => "content-title" }
-          Questions from the developer
-        %center
-          %br
-          %p
-            No developers have claimed this task yet...
-          =link_to "I AM A DEVELOPER", "#", :class => 'content-button', :id => 'dev-request'
-          %p
-            (Feature coming soon)
-          %br
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           Discussion
