@@ -42,7 +42,10 @@ module NavigationHelpers
       "/issue_info/#{issue.id}"
 
     when /^the developer page$/
-      "/issues"
+      "/projects"
+ 
+    when /^the developer page for "Airbears"$/
+      "/projects/1"
 
 
     # Add more mappings here.

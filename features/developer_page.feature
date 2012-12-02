@@ -20,9 +20,9 @@ Scenario: see the correct information displayed on the developer page
   Then I should see a list of "Projects"
   And I should see "Airbears"
   When I click on "Airbears"
-  Then I should on the developer page for "Airbears"
-  And I should see the project "Airbears"
-  And I should see a list of issues under that project
+  Then I should be inside the developer page for "Airbears"
+  And I should see "Airbears" at the top of the page
+
   
 Scenario: see the correct issues displayed for a project
   Given I am on the developer page

@@ -18,16 +18,14 @@ Then /^I should see a text box for Name, Email, and Pivotal Account$/ do
   assert(find(:css,"input#put_pid").text == "")
 end
 
+Then /^I should see a list of "Projects"$/ do
+  assert(find(:css,"div#center-container>div#content-container>div#issues-table"))
+end
+
 And /^I fill in Name with ([^"]*) and Email with ([^']*) and Account with ([^']*)$/ do |name, email, pivotal|
   fill_in("name", :with=>name)
   fill_in("email", :with=>email)
   fill_in("pid", :with=>pivotal)
-end
-
-Then /^I fill in Name with (.+) and Email with (.*) and Account with (.*)$/ do |name, email, account|
-  fill_in("name", :with=>name)
-  fill_in("email", :with=>email)
-  fill_in("pid", :with=>account)
 end
 
 Then /^I press Request$/ do
@@ -50,6 +48,14 @@ Then /^I should see '([^']*)' at the top of the page$/ do |text|
   end
 end
 
+Then /^I should see "(.*?)" at the top of the page$/ do |arg1|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
+
 Then /^I should see '([^']*)'$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -65,6 +71,11 @@ Then /^I should see '(.*)' under that$/ do |text|
     assert page.has_content?(text)
   end
 end
+
+Then /^I should be inside (.* for .*)$/ do |page_name|
+  visit path_to(page_name)
+end
+
 
 Given /^(?:|I )am on (.+ page)$/ do |page_name|
   visit path_to(page_name)
@@ -133,6 +144,10 @@ end
 
 Then /^I click on the issue "(.*)"$/ do |issue_name|
   click_link(issue_name)
+end
+
+When /^I click on "Airbears"$/ do
+  click_link("Airbears")
 end
 
 
