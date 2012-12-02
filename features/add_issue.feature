@@ -49,10 +49,14 @@ Scenario: enter an issue that does not exist
   And I should see "SUBMIT NEW ISSUE"
 
 Scenario: select an action from the list
-  Given I am in Page 2 for issue "UniqueAirbears" with the correct information displayed
+  Given I am in Page 2 for issue "Airbears" with the correct information displayed
   And I follow "I can go on the internet"
-  Then I should be in the page for the issue "UniqueAirbears"
- 
+  Then I should be in the page for the issue "Airbears"
+  
+Scenario: There's more than 1 issue on the list
+  Given I am on Page 2 for the issue "Cs169"
+  Then I should see "Cs169 sucks! Is this your issue?"
+
 Scenario: enter a new issue
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
   And I follow "SUBMIT NEW ISSUE"
@@ -60,11 +64,11 @@ Scenario: enter a new issue
 
 # Page 3
 Scenario: enter information
-  Given I am in Page 3 for issue "UniqueAirbears" with the correct information displayed
+  Given I am in Page 3 for issue "Cs169" with the correct information displayed
   And I fill in "want-text" with "I want to be able to log in for a longer period of time"
   And I fill in "so-text" with "So that I don't have to log in every time I check my email"
-  And I click the submit arrow
-  Then I should be on Page 4 for the issue "UniqueAirbears"
+  And I click on the submit arrow
+  Then I should be on Page 4 for the issue "Cs169"
 
 # Page 4
 Scenario: visit issue information page
