@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration
       t.datetime :date
       t.string :details
       t.integer :issue_id
+      t.boolean :from_developer
     end
   end
 end
