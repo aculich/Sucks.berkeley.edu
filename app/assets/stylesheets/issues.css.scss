@@ -137,7 +137,7 @@
    border-color: #1F87E0 transparent;
 }
 
-#faux-tr{
+.faux-tr{
   color: #FFF;
   width: 100%;
   float: left;
@@ -152,7 +152,7 @@
   margin-bottom: .5em;
 }
 
-#faux-tr-100{
+.faux-tr-100{
   color: #FFF;
   width: 100%;
   float: left;
@@ -167,23 +167,23 @@
   margin-bottom: .5em;
 }
 
-#issues-table #faux-tr:hover{
+#issues-table .faux-tr:hover{
   background-color: #1F87E0;
   border: 1px solid #333;
 }
 
-#issues-table #faux-tr-100:hover{
+#issues-table .faux-tr-100:hover{
   background-color: #1F87E0;
   border: 1px solid #333;
 }
 
-#faux-tr>.col1{
+.faux-tr>.col1{
   width: 55%;
   float: left;
   font-size: .8em;
 } 
 
-#faux-tr-100>.col1{
+.faux-tr-100>.col1{
   width: 100%;
   float: left;
   font-size: .8em;
@@ -193,20 +193,20 @@
   margin-left: .5em;
 }
 
-#faux-tr>.col2{
+.faux-tr>.col2{
   width: 20%;
   margin-left: 5%;
   float: left;
 } 
 
-#faux-tr>.col3{
+.faux-tr>.col3{
   width: 15%;
   margin-left: 5%;
   float: left;
 }
 
 /*
-#faux-tr:hover:after{
+.faux-tr:hover:after{
   position: absolute;
   margin-left: .5em;
   margin-top: .2em;
@@ -226,7 +226,7 @@
   cursor: default !important;
 }
 
-#issue-tr{
+.issue-tr{
   color: #FFF;
   width: 100%;
   float: left;
@@ -241,24 +241,24 @@
   margin-bottom: .5em;
 }
 
-#issues-table #issue-tr:hover{
+#issues-table .issue-tr:hover{
   background-color: #1F87E0;
   border: 1px solid #333;
 }
 
-#issue-tr>.col1{
+.issue-tr>.col1{
   width: 55%;
   float: left;
   font-size: .8em;
 } 
 
-#issue-tr>.col2{
+.issue-tr>.col2{
   width: 20%;
   margin-left: 5%;
   float: left;
 } 
 
-#issue-tr>.col3{
+.issue-tr>.col3{
   width: 15%;
   margin-left: 5%;
   float: left;

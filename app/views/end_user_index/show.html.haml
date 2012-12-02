@@ -17,7 +17,7 @@
                 Votes
             - @issues.each do |issue|
               %a{ :href => "/issue_info/#{issue.id}" }
-                %div{ :id => "faux-tr" }
+                %div{ :class => "faux-tr" }
                   %div{ :class => "col1" } 
                     - if issue.as_a == nil
                       %div= "As a user of #{issue.name}, I want #{issue.i_want} so that #{issue.so_that}"
@@ -33,7 +33,7 @@
               &nbsp&nbsp&nbspHelp contribute to existing user issues
             - @uservoice_tickets.each do |ticket|
               %a{ :href => "/specific_issue/#{ticket.subject}?uservoice_url=#{ticket.url}" }
-                %div{ :id => "faux-tr-100" }
+                %div{ :class => "faux-tr-100" }
                   %div{ :class => "col1" }
                     %div= "#{ticket.subject}"        
       %div{ :class => "swiss-army-box" }

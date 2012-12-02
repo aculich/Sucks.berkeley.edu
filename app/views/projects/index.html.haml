@@ -8,6 +8,6 @@
               &nbsp&nbsp&nbspProjects
             - @projects.each do |project|
               %a{ :href => "/projects/#{project.id}" }
-                %div{ :id => "issue-tr" }
+                %div{ :class => "issue-tr" }
                   %div{ :class => "col1" }
                     %div= project.name
