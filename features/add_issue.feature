@@ -49,9 +49,9 @@ Scenario: enter an issue that does not exist
   And I should see "SUBMIT NEW ISSUE"
 
 Scenario: select an action from the list
-  Given I am in Page 2 for issue "Airbears" with the correct information displayed
+  Given I am in Page 2 for issue "UniqueAirbears" with the correct information displayed
   And I follow "I can go on the internet"
-  Then I should be in the page for the issue "Airbears"
+  Then I should be in the page for the issue "UniqueAirbears"
  
 Scenario: enter a new issue
   Given I am in Page 2 for issue "Airbears" with the correct information displayed
