@@ -29,7 +29,7 @@ And /^I fill in Name with ([^"]*) and Email with ([^']*) and Account with ([^']*
 end
 
 Then /^I press Request$/ do
-  click_button("submit_arrow")
+  click_button("REQUEST")
 end
 
 When /^(?:|I )fill in the text box with "([^"]*)"$/ do |value|
