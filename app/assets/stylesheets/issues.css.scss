@@ -390,9 +390,17 @@
   margin-top: 1em;
 }
 
+#put_commenter_name {
+  width: 30%;
+}
+
+#put_developer_code {
+  width: 40%;
+}
+
 #comments-form input {
-  width: 32%;
   padding: .2em;
+  margin-right: 1em;
   float: left;
   position: relative;
   border: 1px solid #CCC;
@@ -433,7 +441,6 @@
 
 .c-name {
   float: left;
-  width: 60%;
 }
 
 .c-date {
@@ -441,6 +448,13 @@
   width: 30%;
   text-align: right;
 }
+
+.c-dev {
+  float: left;
+  width: 25%;
+  color: #1F87E0;
+  margin-left: .5em;
+} 
 
 .c-details {
   position: relative;
