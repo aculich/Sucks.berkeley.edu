@@ -23,6 +23,7 @@ class Uservoice_ticket < ActiveRecord::Base
           uv_ticket.uservoice_id = ticket['id']
           uv_ticket.ticket_number = ticket['ticket_number']
           uv_ticket.url = ticket['url']
+		  rspec_helper = Daterecord.find_by_id(1)
           uv_ticket.save
         end
       end
