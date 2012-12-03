@@ -74,13 +74,13 @@
       %h2
         Request Pivotal Tracker Access
         = form_tag({}, :id => "dev-request-form") do
-          = text_field :put, :name, :name => 'name', :placeholder => 'Name'
+          = text_field :put, :name, :name => 'name', :placeholder => 'Name', :required => 'true'
           %br
           %br
-          = text_field :put, :email, :name => 'email', :placeholder => 'Email'
+          = text_field :put, :email, :name => 'email', :placeholder => 'Email', :type => 'email', :required => 'true'
           %br
           %br
-          = text_field :put, :pid, :name => 'pid', :placeholder => 'Pivotal Tracker Id'
+          = text_field :put, :pid, :name => 'pid', :placeholder => 'Pivotal Tracker Id', :required => 'true'
           %br
           %br
           = submit_tag "REQUEST", :id => 'submit_arrow'

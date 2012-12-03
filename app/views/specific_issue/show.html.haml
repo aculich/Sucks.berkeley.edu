@@ -7,11 +7,11 @@
         %center  
           = form_tag({}, :id => "user-story-form") do
             = label :issue, :name, "I want"
-            = text_field :put, :want_text, :name => 'want-text'
+            = text_field :put, :want_text, :name => 'want-text', :required => 'true'
             %br
             %br
             = label :issue, :name, "so that"
-            = text_field :put, :so_text, :name => 'so-text'
+            = text_field :put, :so_text, :name => 'so-text', :required => 'true'
             %br
             %br
             - if @uservoice_url != nil
