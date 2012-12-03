@@ -103,7 +103,6 @@ end
 
 Given /^I am in Page 4 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 4 for the issue \"#{issue_name}\""
-  debugger
   step "I should see \"As a\""
   step "I should see \"So that #{Issue.find_by_name(issue_name).so_that}\""
   step "I should see \"I want #{Issue.find_by_name(issue_name).i_want}\""
