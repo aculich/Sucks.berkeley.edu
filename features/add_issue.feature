@@ -68,16 +68,15 @@ Scenario: enter information
   And I fill in "want-text" with "I want to be able to log in for a longer period of time"
   And I fill in "so-text" with "So that I don't have to log in every time I check my email"
   And I click on the submit arrow
-  Then I should be on Page 4 for the issue "Cs169"
 
 # Page 4
 Scenario: visit issue information page
  Given I am in Page 4 for issue "Airbears" with the correct information displayed
- Then I should see "No developers have claimed this task yet..."
+ Then I should see "Request Pivotal Tracker Access"
  
 Scenario: validation flashes for blank text box
  Given I am on the Sucks.Berkeley.edu home page
- And I press the submit arrow
+ And I click on the submit arrow
  Then I should get an error box that tells me the query is blank
  # ^ can we just loop this for every page, or do we have to write it for each page?
  # I feel like if we have 80% coverage, we don't have to do a cuke test for this feature
