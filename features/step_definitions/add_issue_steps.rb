@@ -40,6 +40,10 @@ Given /^I click the submit arrow$/ do
   click_button("submit_arrow")
 end
 
+Given /^I click on the submit arrow$/ do
+  click_button("submit_arrow")
+end
+
 Then /^I should see '([^']*)' at the top of the page$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -87,7 +91,7 @@ end
 
 Given /^I am in Page 2 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 2 for the issue \"#{issue_name}\""
-  step "I should see \"Are any of these your issue?\""
+  step "I should see \"#{issue_name} sucks! Are any of these your issue?\""
 end
 
 Given /^I am in Page 3 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
@@ -99,6 +103,7 @@ end
 
 Given /^I am in Page 4 for issue "(.*?)" with the correct information displayed$/ do |issue_name|
   step "I am on Page 4 for the issue \"#{issue_name}\""
+  debugger
   step "I should see \"As a\""
   step "I should see \"So that #{Issue.find_by_name(issue_name).so_that}\""
   step "I should see \"I want #{Issue.find_by_name(issue_name).i_want}\""
