@@ -2,7 +2,7 @@
   %div{ :id => "center-container" }
     %div{ :id => "main-box" }
       = form_tag do
-        = text_field :put, :issue_name, :name => "what-text", :placeholder=>"e.g. Airbears", :autofocus => 'true', :class => 'autocomplete', 'data-autocomplete-url' => '/what_sucks/autocomplete_for_project_name'
+        = text_field :put, :issue_name, :name => "what-text", :placeholder=>"e.g. Airbears", :autofocus => 'true', :required => 'true', :class => 'autocomplete', 'data-autocomplete-url' => '/what_sucks/autocomplete_for_project_name'
         = label :issue, :name, "sucks!"
         = submit_tag '', :id => 'submit_arrow'
     %div{ :id => "sub-box" }
