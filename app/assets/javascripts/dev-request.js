@@ -1,6 +1,9 @@
+var devRequestPopUpState = false;
+
 $(document).ready(function() {
-  
+
   $('#dev-request').click(function(){
+    devRequestPopUpState = true;
     centerPopup();
     devRequestPopup();
     disableScroll();
@@ -13,8 +16,10 @@ $(document).ready(function() {
   });
 
   $(window).resize(function(){
-    centerPopup();
-    devRequestPopup();
+    if(devRequestPopUpState == true){
+      centerPopup();
+      devRequestPopup();
+    }
   });
 
 });
@@ -29,6 +34,7 @@ setupExit = function() {
 closePopup = function() {
   $('#request-popup').css({"display" : "none"});
   $('#overlay').css({"display" : "none"});
+  devRequestPopUpState = false;
 }
 
 devRequestPopup = function() {
