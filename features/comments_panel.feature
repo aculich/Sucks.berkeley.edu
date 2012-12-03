@@ -16,15 +16,11 @@ Background: issues have been added to database
 
 Scenario: see comment panel displayed
   Given I am in Page 4 for issue "Airbears" with the correct information displayed
-  And I should see "Airbears Sucks!"
-  And I should see "As a user of Airbears"
-  And I see the story "As a user of Airbears So that I can go on the internet I want to Login to work"
   Then I should see "Discussion"
   
-Scenario: add a comment
-  Given I am in Page 2 for issue "Airbears" with the correct information displayed
-  And I see the story "As a user of Airbears So that I can watch hulu I want to get internet access"
-  Then I should see Discussion panel at the bottom
-  And I fill in the panel with "blah"
-  And I press submit
-  Then I should see my comment displayed
+Scenario: add a comment as a normal user
+  Given I am in Page 4 for issue "Airbears" with the correct information displayed
+  Then I should see "Discussion"
+  And I submit a comment with name "Tester" and comment "Hello"
+  And I click the submit arrow
+  Then I should see my comment displayed with name "Tester" and comment "Hello"
