@@ -9,6 +9,24 @@ describe IssueInfoController do
       get :show, :issue_id => issue.id
       assigns(:issue_name).should == "Airbears"
     end
+	it "should call get_pivotal_id" do
+	  @mock = mock('Project')
+	  @mock.stub!(:pivotal_tracker_id).and_return(6)
+      issue = Issue.create()
+	  issue.stub(:project).and_return(@mock)
+      issue.name = "Airbears"
+	  issue.save
+      issue.should_receive(:get_pivotal_id).and_return(6)
+	  post :show, :'issue_id' => issue.id, :'comment-text' => 'blah', :'commenter-name' => 'blah', :'developer-code' => 'blah', :method => 'put'
+	end
+	it "should call get_progress" do
+	  @mock = mock('Issue')
+	  @mock.stub(:name).and_return("Telebears")
+	  @mock.stub(:comments).and_return([2])
+	  Issue.stub!(:find_by_id).with("1").and_return(@mock)
+	  @mock.should_receive(:get_progress)
+	  get :show, :issue_id => 1
+	end
   end
 
   describe "Arriving on issue info page with vote parameter" do

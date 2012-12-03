@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Issue do
   describe "Get issue" do
-    it "should return a list of all values for each field" do
+    it "should return the pivotal tracker id" do
     end
 
     it "should be able to return pivotal tracker stories" do

@@ -27,6 +27,7 @@ class Issue < ActiveRecord::Base
   end
 
   def get_pivotal_id()
+    debugger
     return project.pivotal_tracker_id
   end
 
