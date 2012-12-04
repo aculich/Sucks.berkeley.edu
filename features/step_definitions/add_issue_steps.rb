@@ -8,6 +8,14 @@ Given /the following issues exist/ do |issues_table|
   end
 end
 
+Given /the following projects exist/ do |projs_table|
+  projs_table.hashes.each do |proj|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+	Project.create!(proj)
+  end
+end
+
 Then /^I should see only a text box followed by the word "(.*?)"$/ do |arg1|
   assert(find(:css,"#main-box>form>label").text == arg1)
 end
