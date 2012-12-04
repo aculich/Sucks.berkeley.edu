@@ -10,7 +10,8 @@ class Uservoice_ticket < ActiveRecord::Base
     if not dateAndTime
       dateAndTime = Daterecord.new
       dateAndTime.name = 'UservoiceDate'
-      dateAndTime.dt = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+      #dateAndTime.dt = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+      dateAndTime.dt = "2000-01-01 00:00:00"
       dateAndTime.save
     end
     client.login_as_owner do |owner|
