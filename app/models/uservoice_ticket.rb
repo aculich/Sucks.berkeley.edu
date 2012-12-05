@@ -21,7 +21,9 @@ class Uservoice_ticket < ActiveRecord::Base
           uv_ticket = Uservoice_ticket.new
           messages = ticket['messages']
           message = messages[0]
-          uv_ticket.body = message['body']
+          if message
+          	uv_ticket.body = message['body']
+          end
           uv_ticket.subject = ticket['subject']
           uv_ticket.uservoice_id = ticket['id']
           uv_ticket.ticket_number = ticket['ticket_number']
