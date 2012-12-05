@@ -58,13 +58,13 @@
         %center
           = form_tag({}, :id => "comments-form") do
             %div{ :class => 'nonexpanding' }
-              = text_field :put, :commenter_name, :name => 'commenter-name', :placeholder => 'Name'
+              = text_field :put, :commenter_name, :name => 'commenter-name', :placeholder => 'Name', :required => 'true'
               = text_field :put, :developer_code, :name => 'developer-code', :placeholder => 'Developer Code, Optional'
             %div{ :class => 'expandingArea' }
               %pre
                 %span
                 %br
-              = text_area :put, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion"
+              = text_area :put, :comment_text, :name => 'comment-text', :placeholder => "Contribute to the discussion", :required => 'true'
             = submit_tag "SUBMIT COMMENT", :id => 'submit_arrow'
           %br
   %div{ :id => "request-popup" }
