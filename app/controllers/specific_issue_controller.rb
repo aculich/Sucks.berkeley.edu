@@ -7,7 +7,7 @@ class SpecificIssueController < ApplicationController
     @issue_name = params[:issue_name]
     if params[:uservoice_url] != nil
       @uservoice_url = params[:uservoice_url]
-      @uservoice_ticket = Uservoice_ticket.find_all_by_uservoice_url(params[:uservoice_url])
+      @uservoice_ticket = Uservoice_ticket.find_all_by_url(params[:uservoice_url])
     end
 	if request.post?
       i_want = params["want-text"]
