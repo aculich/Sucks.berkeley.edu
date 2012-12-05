@@ -1,7 +1,7 @@
 class CreateUservoiceTickets < ActiveRecord::Migration
   def change
     create_table :uservoice_tickets do |t|
-      t.string :body
+      t.text :body
       t.string :subject
       t.string :uservoice_id
       t.string :uservoice_auther_karma
