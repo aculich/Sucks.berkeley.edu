@@ -3,8 +3,10 @@
     %div{ :id => "content-container" }
       - if @uservoice_url != nil
         %div{ :class => "swiss-army-box" }
+          %br
           %center
-            = "#{@uservoice_ticket.subject}: #{@uservoice_ticket.body}"  
+            = "#{@uservoice_ticket.subject}: #{@uservoice_ticket.body}"
+          %br  
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           = @issue_name + " sucks! Why? Help us fill out this sentence!"
