@@ -26,6 +26,7 @@ class Uservoice_ticket < ActiveRecord::Base
           	body += "\n"
           	body += message['body']
           	body += "\n\n"
+          end
           uv_ticket.body = body
           uv_ticket.subject = ticket['subject']
           uv_ticket.uservoice_id = ticket['id']
