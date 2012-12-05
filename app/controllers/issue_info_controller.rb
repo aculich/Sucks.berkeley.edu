@@ -36,7 +36,7 @@ class IssueInfoController < ApplicationController
           if params[:'developer-code'] == @issue.get_pivotal_id.to_s
             @comments.create!(:commentor_name => params[:'commenter-name'], :date => Time.now, :details => params[:'comment-text'], :from_developer => true)
           else
-            @notice = "Sorry, the developer code you entered is invalid for this issue. Hint: this is the pivotal tracker project id" 
+            @notice = "Sorry, the developer code you entered is invalid for this issue. Hint: this is the pivotal tracker project id at the end of the url (https://www.pivotaltracker.com/projects/xxxxxx)" 
           end  
         end
       end
