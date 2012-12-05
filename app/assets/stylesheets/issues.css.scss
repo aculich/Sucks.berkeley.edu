@@ -287,6 +287,11 @@
   font-size: 1.25em;
 }
 
+.examples {
+  opacity: .5;
+  padding: 1em;
+}
+
 #issue-info-header {
   padding-top: .5em;
   width: 95%;
@@ -298,6 +303,10 @@
   margin-top: .5em;
   margin-right: 1em;
   float: left;
+}
+
+.bottom-space {
+  margin-bottom: 3em;
 }
 
 .dark-swiss-army-box p {
