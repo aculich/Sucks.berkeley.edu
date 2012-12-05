@@ -61,7 +61,8 @@ match '/summary/:issue_id', :to => 'summary#show'
 
 match 'end_user_index/:issue_name' => 'end_user_index#show', :via => :get, :format => false, :constraints => {issue_name: /.+/}
 match 'issue_info/:issue_id' => 'issue_info#show'
-match 'specific_issue/:issue_name' => 'specific_issue#show'
+match 'specific_issue/:issue_name' => 'specific_issue#show', :via => :get, :format => false, :constraints => {issue_name: /.+/}
+match 'specific_issue/:issue_name' => 'specific_issue#show', :via => :post, :format => false, :constraints => {issue_name: /.+/}
 
 match 'prototype' => 'prototype#index'
 
