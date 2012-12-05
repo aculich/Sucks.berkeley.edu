@@ -19,7 +19,7 @@ class Issue < ActiveRecord::Base
 	if pivotal_progress == "unscheduled" or pivotal_progress == "unstarted"
 	  return "submitted"
 	elsif 
-	  pivotal_progress == "accepted"
+	  pivotal_progress == "accepted" or pivotal_progress == "delivered"
 	  return "completed"
 	else
 	  return "in progress"
