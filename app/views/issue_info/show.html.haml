@@ -13,7 +13,7 @@
             - if session["upvoted_issues"] and session["upvoted_issues"][@issue.id] == "true"
               =link_to "VOTED", "#", :class => "content-button grayed-out"
             - else
-              =link_to "VOTE", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
+              =link_to "THIS ISSUE AFFECTS ME", "/issue_info/#{@issue.id}?vote=true",  :class => "content-button"
           %div{ :id => 'dev-request' }
             =link_to "I AM A DEVELOPER", "#", :class => 'content-button'
         %p

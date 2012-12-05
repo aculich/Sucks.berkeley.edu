@@ -35,7 +35,7 @@
               %a{ :href => "/specific_issue/#{ticket.subject}?uservoice_url=#{ticket.url}" }
                 %div{ :class => "faux-tr-100" }
                   %div{ :class => "col1" }
-                    %div= "#{ticket.subject}"        
+                    %div= "#{ticket.subject}: #{ticket.body}"        
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           - if @issues == []

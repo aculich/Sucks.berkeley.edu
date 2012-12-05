@@ -1,6 +1,10 @@
 %section
   %div{ :id => "center-container" }
     %div{ :id => "content-container" }
+      - if @uservoice_url != nil
+        %div{ :class => "swiss-army-box" }
+          %center
+            = "#{@uservoice_ticket.subject}: #{@uservoice_ticket.body}"  
       %div{ :class => "swiss-army-box" }
         %div{ :class => "content-title" }
           = @issue_name + " sucks! Why? Help us fill out this sentence!"
