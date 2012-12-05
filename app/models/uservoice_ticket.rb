@@ -20,14 +20,8 @@ class Uservoice_ticket < ActiveRecord::Base
         if DateTime.parse(ticket['updated_at']) > dateAndTime.dt
           uv_ticket = Uservoice_ticket.new
           messages = ticket['messages']
-          body = ""
-          messages.each do |message|
-          	body += message['sender']['name']
-          	body += "\n"
-          	body += message['body']
-          	body += "\n\n"
-          end
-          uv_ticket.body = body
+          message = messages[0]
+          uv_ticket.body = message['body']
           uv_ticket.subject = ticket['subject']
           uv_ticket.uservoice_id = ticket['id']
           uv_ticket.ticket_number = ticket['ticket_number']
