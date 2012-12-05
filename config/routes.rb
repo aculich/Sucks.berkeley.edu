@@ -59,7 +59,7 @@ match '/goal/:issue_id', :to => 'what_goal#show'
 match '/identity/:issue_id', :to => 'identity#show'
 match '/summary/:issue_id', :to => 'summary#show'
 
-match 'end_user_index/:issue_name' => 'end_user_index#show', :via => :get, :format => false, :constraints => {issue_name: /\w+\.[\w\.]+/}
+match 'end_user_index/:issue_name' => 'end_user_index#show', :via => :get, :format => false, :constraints => {issue_name: /.+/}
 match 'issue_info/:issue_id' => 'issue_info#show'
 match 'specific_issue/:issue_name' => 'specific_issue#show'
 
